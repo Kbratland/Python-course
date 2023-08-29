@@ -1,6 +1,5 @@
 print ("Hello World")
 count = 0
 while (count <= 10):
-    print ("Count is ") 
-    print (count) 
+    print ("Count is", count) 
     count += 1
