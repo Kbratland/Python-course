@@ -1,2 +1,2 @@
-https://automatetheboringstuff.com/
-https://docs.python.org/3/library/index.html#library-index
+- https://automatetheboringstuff.com/
+- https://docs.python.org/3/library/index.html#library-index
