@@ -7,4 +7,4 @@ root.title = ("Hello Tkinter")
 
 label = Label(root,text = "Hello Tkinter").pack
 
-root.mainloop
+root.mainloop()
