@@ -1,8 +1,9 @@
 from tkinter import *
+from tkmacosx import Label
   
 root = Tk()
 root.title = ("HelloTkinter")
-root.geometry = ('300x300')
+root.geometry = ('3000x3000')
 a = Label(root, text ="Hello World")
 a.pack()
   
