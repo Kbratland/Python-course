@@ -5,6 +5,7 @@ root = Tk()
 
 root.title = ("Hello Tkinter")
 
-label = Label(root,text = "Hello Tkinter").pack
+label = Label(root,text = "Hello Tkinter")
+label.pack()
 
 root.mainloop()
