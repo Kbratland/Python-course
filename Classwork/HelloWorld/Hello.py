@@ -9,6 +9,6 @@ while (count < 25):
     time.sleep(0.25)
     count += 1
 if (count == 25):
-    print("count is", count)
+    print("Count is", count)
     time.sleep(1)
     print("Wasn't that fun, we love counting")
