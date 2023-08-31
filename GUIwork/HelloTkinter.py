@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import *
 
+# HELP TKINTER ANGRY AT ME
 
 def addTo():
     global listbox
@@ -13,10 +14,7 @@ def deleteFrom():
     listbox.delete(listbox.curselection)
 
 root = Tk()
-# root.geometry("500x500")
-# root.resizable(False, False)
 root.title("HelloTkinter")
-# root.configure(background = "dark grey")
 
 label = Label(root, text ="ToDo List").pack()
 
