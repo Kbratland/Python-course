@@ -1,23 +1,31 @@
-import tkinter  as tk
+import tkinter
 from tkinter import *
-from tkinter import ttk
-from tkinter.ttk import *
-  
-root = tk.Tk()
-addto = tk.StringVar()
+
+
+def addTo():
+    print("added")
+    listvar.insert(END,entry.get())
+    entry.delete(0,END)
+
+def deleteFrom():
+    print("removed")
+    listbox.delete(listbox.curselection)
+
+root = Tk()
 root.geometry("500x500")
 root.resizable(False, False)
-root.title = ("HelloTkinter")
-a = Label(root, text ="ToDo List").pack()
-listentry = ttk.Entry(root,textvariable=addto).pack()
-button = Button(root, text = 'Enter')
-button.pack(side = TOP, pady = 0)
-button = Button(root, text = 'remove')
-button.pack(side = TOP, pady = 0)
-tasks = ('test', 'test2')
-taskcount = 1
-print(taskcount, "items in list")
-# var = tk.Variable(value=tasks)
-Listbox = tk.Listbox(root, listvariable = tasks, height = taskcount, selectmode=tk.EXTENDED).pack()
-  
+root.title("HelloTkinter")
+
+label = Label(root, text ="ToDo List").pack()
+
+entry = Entry(root).pack()
+
+button = Button(root, text="add", command=addTo).pack()
+button = Button(root, text="remove", command=deleteFrom).pack()
+
+listvar = StringVar()
+
+listbox = Listbox(root, bg="light blue", listvariable=listvar).pack()
+
+
 root.mainloop()
