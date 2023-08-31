@@ -16,14 +16,14 @@ root = Tk()
 # root.geometry("500x500")
 # root.resizable(False, False)
 root.title("HelloTkinter")
-root.configure(background='light blue')
+# root.configure(background = "dark grey")
 
-label = Label(root, text ="ToDo List",bg="white").pack()
+label = Label(root, text ="ToDo List").pack()
 
-entry = Entry(root,bg="white").pack()
+entry = Entry(root,bg="grey").pack()
 
-button = Button(root, text="add", command=addTo,bg="white").pack()
-button = Button(root, text="remove", command=deleteFrom,bg="white").pack()
+button = Button(root, text="add", command=addTo).pack()
+button = Button(root, text="remove", command=deleteFrom).pack()
 
 # listvar = StringVar()
 #, listvariable=listvar
