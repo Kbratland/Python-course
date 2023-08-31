@@ -3,8 +3,9 @@ from tkinter import *
 
 
 def addTo():
+    global listbox
     print("added")
-    listvar.insert(END,entry.get())
+    listbox.insert(END,entry.get())
     entry.delete(0,END)
 
 def deleteFrom():
@@ -12,20 +13,21 @@ def deleteFrom():
     listbox.delete(listbox.curselection)
 
 root = Tk()
-root.geometry("500x500")
-root.resizable(False, False)
+# root.geometry("500x500")
+# root.resizable(False, False)
 root.title("HelloTkinter")
+root.configure(background='light blue')
 
 label = Label(root, text ="ToDo List").pack()
 
 entry = Entry(root).pack()
 
-button = Button(root, text="add", command=addTo).pack()
-button = Button(root, text="remove", command=deleteFrom).pack()
+button = Button(root, text="add", command=addTo,bg="red").pack()
+button = Button(root, text="remove", command=deleteFrom,bg="red").pack()
 
-listvar = StringVar()
-
-listbox = Listbox(root, bg="light blue", listvariable=listvar).pack()
+# listvar = StringVar()
+#, listvariable=listvar
+listbox = Listbox(root).pack()
 
 
 root.mainloop()
