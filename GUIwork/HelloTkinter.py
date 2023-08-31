@@ -18,12 +18,12 @@ root = Tk()
 root.title("HelloTkinter")
 root.configure(background='light blue')
 
-label = Label(root, text ="ToDo List").pack()
+label = Label(root, text ="ToDo List",bg="white").pack()
 
-entry = Entry(root).pack()
+entry = Entry(root,bg="white").pack()
 
-button = Button(root, text="add", command=addTo,bg="red").pack()
-button = Button(root, text="remove", command=deleteFrom,bg="red").pack()
+button = Button(root, text="add", command=addTo,bg="white").pack()
+button = Button(root, text="remove", command=deleteFrom,bg="white").pack()
 
 # listvar = StringVar()
 #, listvariable=listvar
