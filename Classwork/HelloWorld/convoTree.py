@@ -1,7 +1,7 @@
 import time
 
 time.sleep(0.25)
-
+print("")
 print("Hello, lets talk about food shall we")
 
 time.sleep(0.25)
@@ -42,10 +42,14 @@ if("yes" in entryVar):
         _=input()
         time.sleep(0.25)
         print("interesting, have to go now, goodbye")
+        time.sleep(0.25)
+        print("")
         exit()
     elif("no" in entryVar):
         time.sleep(0.25)
         print("Thats ok, ive got to go now, goodbye")
+        time.sleep(0.25)
+        print("")
         exit()
 elif("no" in entryVar):
     time.sleep(0.25)
@@ -54,6 +58,7 @@ elif("no" in entryVar):
     if("yes" in entryVar):
         time.sleep(0.25)
         print("I agree, got to go now")
+        print("")
         exit()
     elif("no" in entryVar):
         time.sleep(0.25)
@@ -61,13 +66,17 @@ elif("no" in entryVar):
         entryVar = input().lower()
         if("leftover" in entryVar):
             time.sleep(0.25)
-            print("Thats the best")
+            print("That is the best, your right")
+            time.sleep(0.25)
             print("got to go now, goodbye")
+            print("")
             exit()
         elif("hot" in entryVar):
             time.sleep(0.25)
             print("well its certainly an interesting way to start your day")
+            time.sleep(0.25)
             print("got to go now, goodbye")
+            print("")
             exit()
     
     time.sleep(0.25)
