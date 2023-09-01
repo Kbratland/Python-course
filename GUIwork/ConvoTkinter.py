@@ -1,6 +1,8 @@
 import tkinter
 from tkinter import *
 
+#TODO convert convo tree to GUI
+
 window = Tk()
 
 def speak():

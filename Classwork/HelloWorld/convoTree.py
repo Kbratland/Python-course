@@ -10,8 +10,8 @@ print("What is you favorite food?")
 
 time.sleep(0.25)
 
-entryVar = input()
-entryVar.lower()
+entryVar = input().lower()
+
 
 if   ("pizza" in entryVar):
     print("pizza is the most common favorite food in the world")
@@ -30,14 +30,12 @@ time.sleep(0.25)
 
 print("did you know that?")
 
-entryVar = input()
-entryVar.lower()
+entryVar = input().lower()
 
 if("yes" in entryVar):
     time.sleep(0.25)
     print("Interesting, any other food facts to share?")
-    entryVar = input()
-    entryVar.lower()
+    entryVar = input().lower()
     if("yes" in entryVar):
         time.sleep(0.25)
         print("What is it?")
@@ -52,8 +50,7 @@ if("yes" in entryVar):
 elif("no" in entryVar):
     time.sleep(0.25)
     print("well here's another,  did you know that 36% of Americans believe that pizza is a breakfast meal, isnt that strange")
-    entryVar = input()
-    entryVar.lower()
+    entryVar = input().lower()
     if("yes" in entryVar):
         time.sleep(0.25)
         print("I agree, got to go now")
@@ -61,8 +58,7 @@ elif("no" in entryVar):
     elif("no" in entryVar):
         time.sleep(0.25)
         print("But like leftover pizza or hot?")
-        entryVar = input()
-        entryVar.lower()
+        entryVar = input().lower()
         if("leftover" in entryVar):
             time.sleep(0.25)
             print("Thats the best")
