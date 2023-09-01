@@ -1,29 +1,27 @@
-import tkinter
-from tkinter import *
+import tkinter as tk
+  
+root=tk.Tk()
 
-#TODO convert convo tree to GUI
+name_var=tk.StringVar()
 
-window = Tk()
+def submit():
+    name=name_var.get()
+    name_label.config(text=f"hello {name}")
+    print("answer is : " + name)
+    name_var.set("")
+    
 
-def speak():
-    global stage
-    global entry
-    global answer
-    global textVar
-    answer = entryInput.get()
-    if(stage == 1):
-        textVar = (f"Hello {answer} how are you?")
-    stage +=1
-       
+name_label = tk.Label(root, text = 'Hello how are you', font=('calibre',10, 'bold'))
+  
 
-stage = 1
-entryInput = StringVar()
-window.geometry('500x500')
-window.title("Talk to me")
-textVar = ("Hello, whats your name?")
-label = Label(window, textvariable=textVar).pack()
-entry = Entry(window, textvariable=entryInput).pack()
-button = Button(window,text="Enter", command=speak).pack()
+name_entry = tk.Entry(root,textvariable = name_var, font=('calibre',10,'normal'),bg="black")
+  
 
+sub_btn=tk.Button(root,text = 'Submit', command = submit)
+  
 
-window.mainloop()
+name_label.grid(row=0,column=0)
+name_entry.grid(row=1,column=0)
+sub_btn.grid(row=2,column=0)
+  
+root.mainloop()
