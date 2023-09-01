@@ -12,15 +12,15 @@ time.sleep(0.25)
 
 entryVar = input()
 
-if entryVar == "pizza" or entryVar ==("Pizza"):
+if (entryVar == "pizza" or entryVar =="Pizza"):
     print("pizza is the most common favorite food in the world")
-elif entryVar =="sushi" or entryVar =="Sushi":
+elif (entryVar =="sushi" or entryVar =="Sushi"):
     print("sushi is the second most popular food in the world")
-elif entryVar == "Burger" or entryVar == "Hamburger" or entryVar =="Cheeseburger" or entryVar == "burger" or entryVar == "hamburger" or entryVar =="cheeseburger":
+elif (entryVar == "Burger" or entryVar == "Hamburger" or entryVar =="Cheeseburger" or entryVar == "burger" or entryVar == "hamburger" or entryVar =="cheeseburger"):
     print("burgers are the third most common favorite food in the world")
-elif entryVar == "ramen"or entryVar =="Ramen":
+elif (entryVar == "ramen"or entryVar =="Ramen"):
     print("Fun fact, Ramen is the fourth most popular food in the world")
-elif entryVar == "Tacos" or entryVar ==("tacos"):
+elif (entryVar == "Tacos" or entryVar =="tacos"):
     print("Tacos are the fifth most popular food in the world")
 else:
     print("That food isn't in the top 5")
