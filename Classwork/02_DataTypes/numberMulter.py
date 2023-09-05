@@ -1,8 +1,10 @@
 import time
 #-,+,*,/,%,//,**
-time.sleep(0.25)
+print("Lets go through all of the python numerical operators!")
 
-print("\nHello, please give me number to work, your current operator is - (Now accepting floats!)")
+time.sleep(0.75)
+
+print("\nplease give me number to work, your current operator is - (Now accepting floats!)")
 
 time.sleep(0.25)
 try:
@@ -25,7 +27,7 @@ print(f"\nThe number {numVar} minus {numMult} is {numResult}\n")
 
 time.sleep(0.25)
 
-print("\nHello, please give me number to work, your current operator is + (Now accepting floats!)")
+print("\nplease give me number to work, your current operator is + (Now accepting floats!)")
 
 time.sleep(0.25)
 try:
@@ -48,7 +50,7 @@ print(f"\nThe number {numVar} Added to {numMult} is {numResult}\n")
 
 time.sleep(0.25)
 
-print("\nHello, please give me number to work, your current operator is * (Now accepting floats!)")
+print("\nplease give me number to work, your current operator is * (Now accepting floats!)")
 
 time.sleep(0.25)
 try:
@@ -71,7 +73,7 @@ print(f"\nThe number {numVar} multiplied by {numMult} is {numResult}\n")
 
 time.sleep(0.25)
 
-print("\nHello, please give me number to work, your current operator is / (Now accepting floats!)")
+print("\nplease give me number to work, your current operator is / (Now accepting floats!)")
 
 time.sleep(0.25)
 try:
@@ -94,7 +96,7 @@ print(f"\nThe number {numVar} divided by {numMult} is {numResult}\n")
 
 time.sleep(0.25)
 
-print("\nHello, please give me number to work, your current operator is % (Now accepting floats!)")
+print("\nplease give me number to work, your current operator is % (Now accepting floats!)")
 
 time.sleep(0.25)
 try:
@@ -117,7 +119,7 @@ print(f"\nThe number {numVar} is {numResult} percent of {numMult}\n")
 
 time.sleep(0.25)
 
-print("\nHello, please give me number to work, your current operator is // (Now accepting floats!)")
+print("\nplease give me number to work, your current operator is // (Now accepting floats!)")
 
 time.sleep(0.25)
 try:
@@ -140,7 +142,7 @@ print(f"\nThe number {numVar} Divided by {numMult} is {numResult}\n")
 
 time.sleep(0.25)
 
-print("\nHello, please give me number to work, your current operator is ** (Now accepting floats!)")
+print("\nplease give me number to work, your current operator is ** (Now accepting floats!)")
 
 time.sleep(0.25)
 try:
