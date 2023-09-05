@@ -14,6 +14,7 @@ def submit():
     if(name != ""):
         listbox.insert(num, name)
         num += 1
+        
 def delete():
     global num
     listbox.delete(tk.ANCHOR)
