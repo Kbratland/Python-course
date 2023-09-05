@@ -5,6 +5,7 @@ root.title("TODO List")
 
 name_var=tk.StringVar()
 num = 0
+
 def submit():
     global listbox
     global num
@@ -23,9 +24,10 @@ name_label = tk.Label(root, text = ' Add to Todo List', font=('calibre',10, 'bol
 name_entry = tk.Entry(root,textvariable = name_var, font=('calibre',10,'normal'),bg="black")
 
 sub_btn=tk.Button(root,text = 'Enter', command = submit)
+
 sub_btn2=tk.Button(root,text = 'Remove', command = delete)
   
-listbox = tk.Listbox(root,bg="black",height=num,wrap=WORD)
+listbox = tk.Listbox(root,bg="black",height=num)
 
 name_label.grid(row=0,column=0)
 name_entry.grid(row=1,column=0)
