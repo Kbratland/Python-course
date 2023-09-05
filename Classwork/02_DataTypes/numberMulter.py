@@ -138,7 +138,7 @@ numResult = round((numVar // numMult),6)
 
 time.sleep(0.15)
 
-print(f"\nThe number {numVar} Divided by {numMult} is {numResult}\n")
+print(f"\nThe number {numMult} is in {numVar} {numResult} times\n")
 
 time.sleep(0.25)
 
