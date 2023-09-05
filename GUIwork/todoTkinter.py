@@ -25,7 +25,7 @@ name_entry = tk.Entry(root,textvariable = name_var, font=('calibre',10,'normal')
 sub_btn=tk.Button(root,text = 'Enter', command = submit)
 sub_btn2=tk.Button(root,text = 'Remove', command = delete)
   
-listbox = tk.Listbox(root,bg="black",height=num)
+listbox = tk.Listbox(root,bg="black",height=num,wrap=WORD)
 
 name_label.grid(row=0,column=0)
 name_entry.grid(row=1,column=0)
