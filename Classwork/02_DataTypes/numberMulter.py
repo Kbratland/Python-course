@@ -19,6 +19,7 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
+    
 numResult = round((numVar - numMult),6)
 
 time.sleep(0.15)
@@ -42,6 +43,7 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
+    
 numResult = round((numVar + numMult),6)
 
 time.sleep(0.15)
@@ -65,6 +67,7 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
+    
 numResult = round((numVar * numMult),6)
 
 time.sleep(0.15)
@@ -88,6 +91,7 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
+    
 numResult = round((numVar / numMult),6)
 
 time.sleep(0.15)
@@ -137,6 +141,7 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
+    
 numResult = round((numVar // numMult),6)
 
 time.sleep(0.15)
@@ -160,6 +165,7 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
+    
 numResult = round((numVar ** numMult),6)
 
 time.sleep(0.15)
