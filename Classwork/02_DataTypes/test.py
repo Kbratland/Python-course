@@ -1,1 +1,4 @@
-print(8 // 3)
+yes = True
+while yes==True:
+    print(float(input()) % float(input()))
+    print("")
