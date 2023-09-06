@@ -164,4 +164,3 @@ time.sleep(0.15)
 print(f"\nThe number {numVar} to the power of {numMult} is {numResult}\n")
 
 time.sleep(0.25)
-
