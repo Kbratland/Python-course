@@ -2,6 +2,7 @@ import tkinter as tk
   
 root=tk.Tk()
 root.title("TODO List")
+root.geometry("350x1100")
 
 name_var=tk.StringVar()
 num = 0
@@ -20,15 +21,15 @@ def delete():
     listbox.delete(tk.ANCHOR)
     num -=1
 
-name_label = tk.Label(root, text = ' Add to Todo List', font=('calibre',10, 'bold'))
+name_label = tk.Label(root, text = ' Add to Todo List', font=('calibre',20, 'bold'))
 
-name_entry = tk.Entry(root,textvariable = name_var, font=('calibre',10,'normal'),bg="black")
+name_entry = tk.Entry(root,textvariable = name_var, font=('calibre',12,'normal'),bg="black")
 
 sub_btn=tk.Button(root,text = 'Enter', command = submit)
 
 sub_btn2=tk.Button(root,text = 'Remove', command = delete)
   
-listbox = tk.Listbox(root,bg="black",height=num)
+listbox = tk.Listbox(root,bg="black",height=num,width=40)
 
 name_label.grid(row=0,column=0)
 name_entry.grid(row=1,column=0)
