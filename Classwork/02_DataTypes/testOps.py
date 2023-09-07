@@ -1,4 +1,12 @@
-yes = True
-while yes==True:
-    print(float(input()) % float(input()))
-    print("")
+import random
+
+
+print(random.randrange(1,4))
+print(random.randrange(1,4))
+print(random.randrange(1,4))
+print(random.randrange(1,4))
+print(random.randrange(1,4))
+print(random.randrange(1,4))
+print(random.randrange(1,4))
+print(random.randrange(1,4))
+print(random.randrange(1,4))
