@@ -1,5 +1,5 @@
 import tkinter as tk
-  
+
 root=tk.Tk()
 root.title("TODO List")
 root.geometry("350x1100")
