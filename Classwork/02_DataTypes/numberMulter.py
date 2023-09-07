@@ -119,7 +119,7 @@ except:
 if(numVar > numMult):
     numResult = round((numVar % numMult),6)
     time.sleep(0.15)
-    print(f"\nThe number {numVar} divided by {numMult} has a remainder of{numResult}\n")
+    print(f"\nThe number {numVar} divided by {numMult} has a remainder of {numResult}\n")
 else:
     time.sleep(0.15)
     print("you cant divide a number by something bigger than it")
