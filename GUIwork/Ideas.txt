@@ -2,4 +2,12 @@ maybe like a time capsule system, like write out messages and have them appear a
 a file searcher that might be more focused then mac's (likely only single folders, not search folders in folders in folders)
 continue to polish the todo list, ex: database integration
 some sort of logic game displayed by the window like tic tac toe 
-(more of a later thing, seems kinda wierd to check for wins maybe not though, wierd to get the computer to pick a spot to take though)
+(more of a later thing, seems kinda weird to check for wins maybe not though, weird to get the computer to pick a spot to take though)
+Rock Paper Scissors Game 
+Age Calculator App 
+Graphical Register and Login System
+Pharmacy Management System 
+Restaurant Management System 
+Tic Tac Toe Game 
+Snake Game 
+Color Game 
