@@ -2,6 +2,7 @@
     "cSpell.words": [
         "addto",
         "convo",
+        "faren",
         "listentry",
         "listvar",
         "listvariable",
@@ -10,7 +11,9 @@
         "pady",
         "selectmode",
         "taskcount",
+        "templabel",
         "textvariable",
-        "Tkinter"
+        "Tkinter",
+        "weightlabel"
     ]
 }

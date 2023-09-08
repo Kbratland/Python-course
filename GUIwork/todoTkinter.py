@@ -2,10 +2,10 @@ import tkinter as tk
 
 root=tk.Tk()
 root.title("TODO List")
-root.geometry("350x1100")
+num = 0
+root.geometry(f"350x1100")
 
 name_var=tk.StringVar()
-num = 0
 
 def submit():
     global listbox
@@ -15,6 +15,7 @@ def submit():
     if(name != ""):
         listbox.insert(num, name)
         num += 1
+        
 
 def delete():
     global num
