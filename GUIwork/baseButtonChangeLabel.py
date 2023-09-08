@@ -8,7 +8,7 @@ def changeText():
     global my_text
     label.config(text = my_text)
 
-button = Button(root,text = "Please update",command = changeText)
+button = Button(root,text = "change text",command = changeText)
 
 label = Label(root,text = "old text")
 
