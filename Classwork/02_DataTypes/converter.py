@@ -1,8 +1,8 @@
 from tkinter import *
 
 root = Tk()
-root.title("Converter")
-root.geometry("225x250")
+root.title("Converter - (can display up to 16 digit inputs)")
+root.geometry("425x450")
 
 my_text = "Test Complete"
 tempInput = StringVar()
