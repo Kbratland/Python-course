@@ -2,7 +2,7 @@ from tkinter import *
 
 root = Tk()
 root.title("Converter - (can display up to 16 digit inputs)")
-root.geometry("425x450")
+root.geometry("425x250")
 
 my_text = "Test Complete"
 tempInput = StringVar()
@@ -70,7 +70,7 @@ def kiloConvert():
     if(proceed == True):
         changeWeight = (changeWeight * 0.4535923)
         changeWeight = round(changeWeight,2)
-        my_text = str(originWeight) + " pounds is " + str(changeWeight) + " Kilograms"
+        my_text = str(originWeight) + " Pounds is " + str(changeWeight) + " Kilograms"
         weightLabel.config(text = my_text)
     else:
         my_text = "Thats not a number, Enter again"
