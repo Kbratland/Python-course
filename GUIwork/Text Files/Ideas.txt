@@ -3,7 +3,7 @@ a file searcher that might be more focused then mac's (likely only single folder
 continue to polish the todo list, ex: database integration
 some sort of logic game displayed by the window like tic tac toe 
 (more of a later thing, seems kinda weird to check for wins maybe not though, weird to get the computer to pick a spot to take though or make it pvp not v computer)
-Rock Paper Scissors Game - random Number & comparing
+Rock Paper Scissors Game - random Number & comparing - DONE!
 Age Calculator App - date+time libraries
 Graphical Register and Login System
 Snake Game - Graphical changing work + logic
