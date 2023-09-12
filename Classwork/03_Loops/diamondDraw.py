@@ -36,7 +36,7 @@ while loopCode == True:
                 
                 time.sleep(0.000015)
                 
-                print(".",end="")
+                print("-",end="")
             for lp3 in range(int(lp)):
                 
                 time.sleep(0.000015)
@@ -46,7 +46,7 @@ while loopCode == True:
                 
                 time.sleep(0.000015)
                 
-                print(".",end="")
+                print("-",end="")
                 
             time.sleep(0.000015)
             
@@ -61,7 +61,7 @@ while loopCode == True:
                 
                 time.sleep(0.000015)
                 
-                print(".",end="")
+                print("-",end="")
             for lp3 in range(int(lp)):
                 
                 time.sleep(0.000015)
@@ -71,7 +71,7 @@ while loopCode == True:
                 
                 time.sleep(0.000015)
                 
-                print(".",end="")
+                print("-",end="")
                 
             time.sleep(0.000015)
             
