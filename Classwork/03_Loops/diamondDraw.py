@@ -1,58 +1,67 @@
 import time
 loopCode = True
+diSource = "0"
 while loopCode == True:
     getInput = True
     time.sleep(0.000015)
-    print("\nI am going to draw a diamond, please enter a positive even integer\n")
+    print("\nI am going to draw a diamond, please enter a positive integer (Numbers over 150 will wrap, numbers over 190 will break diamond)\n")
     while(getInput == True):
         try:
             diamondWidth = int(input())
             getInput == False
             if(diamondWidth %2!=0):
                 
-                time.sleep(0.000015)
-                
-                print("\nThats not an even integer\n")
-                continue
-            break
+                startInt = 0
+                isOdd = True
+            else:
+                isOdd = False
+                startInt = 1
         except:
             
             time.sleep(0.000015)
             
             print("\nThats not a positive even integer \n")
             continue
-        
+        time.sleep(0.000015)
+        print("\nEnter a character to make the diamond out of (Single characters preferred)\n")
+        try:
+            diSource = str(input())
+            break
+        except:
+            time.sleep(0.000015)
+            print("\nThat doesn't work, lets try this again\n")
+            continue
+    
     time.sleep(0.000015)
 
     print("\nPrinting\n")
 
     level = 1
     widthIn = int(diamondWidth)
-
-    for lp in range(1, diamondWidth,2):
+    for lp in range(startInt, diamondWidth,2):
         if level <= diamondWidth:
             level += 1
             for lp2 in range(int(diamondWidth - level)):
                 
                 time.sleep(0.000015)
                 
-                print("-",end="")
+                print(" ",end="")
             for lp3 in range(int(lp)):
                 
                 time.sleep(0.000015)
                 
-                print("*",end="")
+                print(diSource,end="")
             for lp4 in range(int(diamondWidth - level)):
                 
                 time.sleep(0.000015)
                 
-                print("-",end="")
+                print(" ",end="")
                 
             time.sleep(0.000015)
             
             print("")
             
-    diamondWidth -=1
+    diamondWidth -= 1
 
     for lp in range(diamondWidth, 0,-2):
         if level <= diamondWidth:
@@ -61,17 +70,17 @@ while loopCode == True:
                 
                 time.sleep(0.000015)
                 
-                print("-",end="")
+                print(" ",end="")
             for lp3 in range(int(lp)):
                 
                 time.sleep(0.000015)
                 
-                print("*",end="")
+                print(diSource,end="")
             for lp4 in range(int(diamondWidth - level)):
                 
                 time.sleep(0.000015)
                 
-                print("-",end="")
+                print(" ",end="")
                 
             time.sleep(0.000015)
             
