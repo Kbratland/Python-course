@@ -9,6 +9,9 @@ while loopCode == True:
         try:
             diamondWidth = int(input())
             getInput == False
+            if diamondWidth <= 0:
+                print("\nThe number has to be above zero, try again\n")
+                continue
             if(diamondWidth %2!=0):
                 
                 startInt = 0
@@ -20,10 +23,10 @@ while loopCode == True:
             
             time.sleep(0.000015)
             
-            print("\nThats not a positive even integer \n")
+            print("\nThats not a positive even integer, lets try again \n")
             continue
         time.sleep(0.000015)
-        print("\nEnter a character to make the diamond out of (Single characters preferred)\n")
+        print("\nEnter a character to make the diamond out of (Single characters preferred but not necessary)\n")
         try:
             diSource = str(input())
             break
@@ -33,7 +36,7 @@ while loopCode == True:
             continue
     
     time.sleep(0.000015)
-
+    # diamondWidth *= len(diSource)
     print("\nPrinting\n")
 
     level = 1
