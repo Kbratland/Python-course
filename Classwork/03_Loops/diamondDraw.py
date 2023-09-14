@@ -44,7 +44,7 @@ while loopCode == True:
             break
         except:
             time.sleep(0.000015)
-            print("\nThat doesn't work, lets try this again from the begining\n")
+            print("\nThat doesn't work, lets try this again from the beginning\n")
             continue
     
     time.sleep(0.000015)
