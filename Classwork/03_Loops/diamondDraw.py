@@ -5,6 +5,8 @@ loopCode = True
 diSource = "0"
 diSpace = " "
 diamondWidth = int(0)
+start = "\033[1m"
+end = "\033[0;0m"
 
 while loopCode == True:
     
@@ -77,7 +79,7 @@ while loopCode == True:
                 if randomBool == True:
                     
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter,end="")
+                    print(randomLowerLetter + end,end="")
                 else:
                     print(diSpace,end="")
                     
@@ -86,7 +88,7 @@ while loopCode == True:
                 time.sleep(0.00015)
                 if randomBool == True:
                     randomUpperLetter = chr(random.randint(ord('A'), ord('Z')))
-                    print (randomUpperLetter,end="")
+                    print (randomUpperLetter + start,end="")
                 else:    
                     print(diSource,end="")
                     
@@ -97,7 +99,7 @@ while loopCode == True:
                 if randomBool == True:
                     
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter,end="")
+                    print(randomLowerLetter + end,end="")
                 else:
                     print(diSpace,end="")
             time.sleep(0.00015)
@@ -117,7 +119,7 @@ while loopCode == True:
                 if randomBool == True:
                     
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter,end="")
+                    print(randomLowerLetter + end,end="")
                 else:
                     
                     print(diSpace,end="")
@@ -129,7 +131,7 @@ while loopCode == True:
                 if randomBool == True:
                     
                     randomUpperLetter = chr(random.randint(ord('A'), ord('Z')))
-                    print (randomUpperLetter,end="")
+                    print (randomUpperLetter + start,end="")
                 else:    
                     
                     print(diSource,end="")
@@ -139,7 +141,7 @@ while loopCode == True:
                 time.sleep(0.00015)
                 if randomBool == True:
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter,end="")
+                    print(randomLowerLetter + end,end="")
                 else:
                     print(diSpace,end="")
                 
