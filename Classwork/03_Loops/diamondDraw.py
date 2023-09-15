@@ -1,9 +1,11 @@
 import time
 import random
+
 loopCode = True
 diSource = "0"
 diSpace = " "
 randomLowerLetter = chr
+
 while loopCode == True:
     randomBool = False
     diSpace = " "
