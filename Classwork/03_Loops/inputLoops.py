@@ -1,16 +1,23 @@
 import time
 isNum = False
-failCount = 0
+attemptCount = 1
 while isNum == False:
-    userNumber = input("\nEnter a number please: ")
+    userInput = input("\nEnter a number please: ")
     try:
-        userNumber = int(userNumber)
+        userInput = int(userInput)
         isNum = True
     except:
-        print("\nThats not a number\n")
-        failCount += 1
-if failCount == 0:
+        time.sleep(0.015)
+        print("\n Thats not a number\n")
+        attemptCount += 1
+        if attemptCount > 10:
+            time.sleep(0.015)
+            print("\nThis isn't going anywhere, goodbye\n")
+            exit()
+if attemptCount == 0:
+    time.sleep(0.015)
     print("\nwow first try")
-else:
-    print(f"\nNice! you took {failCount + 1} attempts to get it right")
+elif attemptCount <= 10:
+    time.sleep(0.015)
+    print(f"\nNice! you took {attemptCount} attempts to get it right")
     
