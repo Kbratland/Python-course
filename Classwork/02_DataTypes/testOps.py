@@ -1,6 +1,17 @@
 import time
-start = "\033[1m"
-end = "\033[0;0m"
-while True:
-    time.sleep(0.15)
-    print ("The " + start + "Text" + end + " is bold.")
+
+def count(start, end, countBy = 1):
+    if end < start and countBy >= 0:
+        print("\nSwapping\n")
+        temp = end
+        end = start
+        start = temp
+    count = start
+    print(f"Counting from {start} to {end} by {countBy}'s")
+    for count in range(start,end,countBy):
+        time.sleep(0.05)
+        print(count)
+        count += countBy
+    print(count,"\n")
+count(int(input("\nCount from: ")),int(input("Count to: ")),int(input("Count by: ")))
+
