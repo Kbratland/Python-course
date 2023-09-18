@@ -16,10 +16,10 @@ def rock():
     global score
     global enScore
     
-    enChoice = random.randrange(0,4)
-    if(enChoice == 1):
+    enChoice = random.randrange(0,7)
+    if(enChoice == 1 or enChoice == 4):
         text = "You picked rock, I picked rock, Tie, Play again?"
-    elif(enChoice == 2):
+    elif(enChoice == 2 or enChoice == 5):
         text = "You picked rock, I picked paper, I Win, Play again?"
         enScore += 1
     else:
@@ -35,11 +35,11 @@ def paper():
     global score
     global enScore
     
-    enChoice = random.randrange(0,4)
-    if(enChoice == 1):
+    enChoice = random.randrange(0,7)
+    if(enChoice == 1 or enChoice == 4):
         text = "You picked paper, I picked rock, You Win, Play again?"
         score += 1
-    elif(enChoice == 2):
+    elif(enChoice == 2 or enChoice == 5):
         text = "You picked paper, I picked paper, Tie, Play again?"
     else:
         text = "You picked paper, I picked Scissors, I Win, Play again?"
@@ -54,11 +54,11 @@ def scissors():
     global score
     global enScore
     
-    enChoice = random.randrange(0,4)
-    if(enChoice == 1):
+    enChoice = random.randrange(0,7)
+    if(enChoice == 1 or enChoice == 4):
         text = "You picked scissors, I picked rock, I Win, Play again?"
         enScore += 1
-    elif(enChoice == 2):
+    elif(enChoice == 2 or enChoice == 5):
         text = "You picked scissors, I picked paper, You Win, Play again?"
         score += 1
     else:
