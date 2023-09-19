@@ -1,25 +1,30 @@
-def getInt(intIn):
+def getInt(promptIn):
     while True:
+        intIn = input(promptIn)
         try:
             intIn = int(intIn)
             if intIn <= 100 and intIn >= 0:
                 return f"\nCorrect! The number {intIn} is an integer within the 1 - 100 range\n"
             else:
-                return("\nThats not inside the 1 - 100 range, goodbye")    
+                print("\nThats not inside the 1 - 100 range, try")  
+                continue  
         except:
-            return("\nThat is not a integer, goodbye")
-            
-def getFloat(floatIn):
+            print("\nThat is not a integer, try again")
+            continue
+        
+def getFloat(promptIn):
     while True:
+        floatIn = input(promptIn)
         try:
             floatIn = float(floatIn)
             if floatIn <= 100 and floatIn >= 0:
                 return f"\nCorrect! The number {floatIn} is an float within the 1 - 100 range\n"
             else:
-                return("\nThats not inside the 1 - 100 range, goodbye")
+                print("\nThats not inside the 1 - 100 range, try")
+                continue
         except:
-            return("\nThat is not a float, goodbye")
+            print("\nThat is not a float, try again")
+            continue
             
-while True:           
-    print(getInt(input("\nPlease enter a number between 1 and 100: ")))
-    print(getFloat(input("\nPlease enter a float between 1 and 100: ")))
+print(getInt("\nPlease enter a number in the 1-100 range: "))
+print(getFloat("\nPlease enter a float in the 1-100 range: "))
