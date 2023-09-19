@@ -1,12 +1,15 @@
+rangeTop = input("Set max number: ")
+rangeBot = input("Set min number: ")
+
 def getInt(promptIn):
     while True:
         intIn = input(promptIn)
         try:
             intIn = int(intIn)
-            if intIn <= 100 and intIn >= 0:
-                return f"\nCorrect! The number {intIn} is an integer within the 1 - 100 range\n"
+            if intIn <= rangeTop and intIn >= 0:
+                return f"\nCorrect! The number {intIn} is an integer within the {rangeBot} - {rangeTop} range\n"
             else:
-                print("\nThats not inside the 1 - 100 range, try")  
+                print(f"\nThats not inside the {rangeBot} - {rangeTop} range, try")  
                 continue  
         except:
             print("\nThat is not a integer, try again")
@@ -17,14 +20,14 @@ def getFloat(promptIn):
         floatIn = input(promptIn)
         try:
             floatIn = float(floatIn)
-            if floatIn <= 100 and floatIn >= 0:
-                return f"\nCorrect! The number {floatIn} is an float within the 1 - 100 range\n"
+            if floatIn <= rangeTop and floatIn >= 0:
+                return f"\nCorrect! The number {floatIn} is an float within the {rangeBot} - {rangeTop} range\n"
             else:
-                print("\nThats not inside the 1 - 100 range, try")
+                print(f"\nThats not inside the {rangeBot} - {rangeTop} range, try")
                 continue
         except:
             print("\nThat is not a float, try again")
             continue
             
-print(getInt("\nPlease enter a number in the 1-100 range: "))
-print(getFloat("\nPlease enter a float in the 1-100 range: "))
+print(getInt(f"\nPlease enter a number in the {rangeBot}-{rangeTop} range: "))
+print(getFloat(f"\nPlease enter a float in the {rangeBot}-{rangeTop} range: "))
