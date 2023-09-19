@@ -7,9 +7,9 @@ def getInt(promptIn):
         try:
             intIn = int(intIn)
             if intIn <= rangeTop and intIn >= 0:
-                return f"\nCorrect! The number {intIn} is an integer within the {rangeBot} - {rangeTop} range\n"
+                return f"\nCorrect! The number {intIn} is an integer within the {rangeBot}-{rangeTop} range\n"
             else:
-                print(f"\nThats not inside the {rangeBot} - {rangeTop} range, try")  
+                print(f"\nThats not inside the {rangeBot}-{rangeTop} range, try")  
                 continue  
         except:
             print("\nThat is not a integer, try again")
@@ -21,9 +21,9 @@ def getFloat(promptIn):
         try:
             floatIn = float(floatIn)
             if floatIn <= rangeTop and floatIn >= 0:
-                return f"\nCorrect! The number {floatIn} is an float within the {rangeBot} - {rangeTop} range\n"
+                return f"\nCorrect! The number {floatIn} is an float within the {rangeBot}-{rangeTop} range\n"
             else:
-                print(f"\nThats not inside the {rangeBot} - {rangeTop} range, try")
+                print(f"\nThats not inside the {rangeBot}-{rangeTop} range, try")
                 continue
         except:
             print("\nThat is not a float, try again")
