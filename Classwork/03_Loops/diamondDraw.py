@@ -52,15 +52,19 @@ while loopCode == True:
                 randomBool = True
                 diSource = "0"
                 
-                break
             else:
                 
                 diSource = diIn
-            break
         except:
             time.sleep(0.00015)
             print("\nThat doesn't work, lets try this again from the beginning\n")
             continue
+        diSpace = str(input("\nWhat should i make the spaces out of? \n\n"))
+        if len(diSpace) != 1:
+            print("\nYou can only use one character for spaces, lets try again\n")
+            continue
+        else:
+            break
     
     time.sleep(0.00015)
     print("\nPrinting\n")
