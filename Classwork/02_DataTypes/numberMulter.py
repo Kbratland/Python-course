@@ -1,5 +1,5 @@
 import time
-#-,+,*,/,%,//,**
+# -,+,*,/,%,//,**
 print("Lets go through all of the python numerical operators!")
 
 time.sleep(0.75)
@@ -19,8 +19,8 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
-    
-numResult = round((numVar - numMult),6)
+
+numResult = round((numVar - numMult), 6)
 
 time.sleep(0.15)
 
@@ -43,8 +43,8 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
-    
-numResult = round((numVar + numMult),6)
+
+numResult = round((numVar + numMult), 6)
 
 time.sleep(0.15)
 
@@ -67,8 +67,8 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
-    
-numResult = round((numVar * numMult),6)
+
+numResult = round((numVar * numMult), 6)
 
 time.sleep(0.15)
 
@@ -91,8 +91,8 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
-    
-numResult = round((numVar / numMult),6)
+
+numResult = round((numVar / numMult), 6)
 
 time.sleep(0.15)
 
@@ -115,11 +115,12 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
-    
-if(numVar > numMult):
-    numResult = round((numVar % numMult),6)
+
+if (numVar > numMult):
+    numResult = round((numVar % numMult), 6)
     time.sleep(0.15)
-    print(f"\nThe number {numVar} divided by {numMult} has a remainder of {numResult}\n")
+    print(
+        f"\nThe number {numVar} divided by {numMult} has a remainder of {numResult}\n")
 else:
     time.sleep(0.15)
     print("you cant divide a number by something bigger than it")
@@ -141,8 +142,8 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
-    
-numResult = round((numVar // numMult),6)
+
+numResult = round((numVar // numMult), 6)
 
 time.sleep(0.15)
 
@@ -165,8 +166,8 @@ except:
     time.sleep(0.25)
     print("\nthats not a number, Goodbye\n")
     exit()
-    
-numResult = round((numVar ** numMult),6)
+
+numResult = round((numVar ** numMult), 6)
 
 time.sleep(0.15)
 

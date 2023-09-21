@@ -1,5 +1,4 @@
 from tkinter import *
-
 root = Tk()
  
 text = "new text" 
@@ -15,4 +14,4 @@ label = Label(root,text = "old text")
 label.pack()
 button.pack()
 
-root.mainloop()
+root.mainloop() 

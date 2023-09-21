@@ -15,7 +15,7 @@ def countCom(addNum):
     time.sleep(0.5)
     countLabel.config(text=tCount)   
     
-    
+     
 countLabel = Label(root,text="Count here")
 
 funcButton = Button(root, text="Count + 1",command=lambda:countCom(1))

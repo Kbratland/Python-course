@@ -20,7 +20,7 @@ if(limit < 0):
     exit()
     
 time.sleep(0.15)
-
+ 
 print("\nEnter a number to count by (Keep it positive and relative to your original number)\n")
 
 try:

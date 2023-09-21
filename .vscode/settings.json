@@ -1,20 +1,29 @@
 {
-    "cSpell.words": [
-        "addto",
-        "convo",
-        "faren",
-        "ified",
-        "listentry",
-        "listvar",
-        "listvariable",
-        "Mult",
-        "padx",
-        "pady",
-        "selectmode",
-        "taskcount",
-        "templabel",
-        "textvariable",
-        "Tkinter",
-        "weightlabel"
-    ]
+  "cSpell.words": [
+    "addto",
+    "convo",
+    "faren",
+    "ified",
+    "listentry",
+    "listvar",
+    "listvariable",
+    "Mult",
+    "padx",
+    "pady",
+    "selectmode",
+    "taskcount",
+    "templabel",
+    "textvariable",
+    "Tkinter",
+    "weightlabel"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "python.formatting.provider": "none"
 }

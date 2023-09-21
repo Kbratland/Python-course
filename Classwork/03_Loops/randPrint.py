@@ -16,7 +16,7 @@ while True:
     time.sleep(0.00005)
     print(randomLetter,end="")
     randomLetter = random.choice(string.ascii_letters)
-    time.sleep(0.005)
+    time.sleep(0.005) 
     print(randomLetter,end="")
     randomLetter = random.choice(string.ascii_letters)
     time.sleep(0.005)

@@ -18,8 +18,12 @@ while loopCode == True:
             if diamondWidth <= 0:
                 print("\nThe number has to be above zero, try again\n")
                 continue
+            
+            
+            
+            
             if(diamondWidth %2!=0):
-                
+                 
                 startInt = 0
                 isOdd = True
             else:

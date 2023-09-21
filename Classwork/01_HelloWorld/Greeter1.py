@@ -6,7 +6,7 @@ foodCount = 0
 nameList = []
 going = True
 while(going == True):
-    print("Enter your name")
+    print("Enter your name") 
     nameHolder = input()
     time.sleep(0.15)
     if(nameHolder == "tally"):

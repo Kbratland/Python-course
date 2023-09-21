@@ -43,7 +43,7 @@ if("yes" in entryVar):
         time.sleep(0.25)
         print("interesting, have to go now, goodbye")
         time.sleep(0.25)
-        print("")
+        print("") 
         exit()
     elif("no" in entryVar):
         time.sleep(0.25)
