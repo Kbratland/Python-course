@@ -59,11 +59,14 @@ while loopCode == True:
             time.sleep(0.00015)
             print("\nThat doesn't work, lets try this again from the beginning\n" + end)
             continue
-        diSpace = str(
-            input("\nWhat should i make the spaces out of? \n\n" + end))
-        if len(diSpace) != 1:
-            print("\nYou can only use one character for spaces, lets try again\n" + end)
-            continue
+        if not randomBool:
+            diSpace = str(
+                input("\nWhat should i make the spaces out of? \n\n" + end))
+            if len(diSpace) != 1:
+                print("\nYou can only use one character for spaces, lets try again\n" + end)
+                continue
+            else:
+                break
         else:
             break
 
@@ -115,7 +118,7 @@ while loopCode == True:
 
     for lp in range(diamondWidth, 0, -2):
 
-        if level <= diamondWidth: 
+        if level <= diamondWidth:
 
             level -= 1
             for lp2 in range(int(diamondWidth - level)):
