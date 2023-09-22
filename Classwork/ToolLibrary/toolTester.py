@@ -1,6 +1,6 @@
 from swagFuncs import *
 
-mainChoice = int(input("\nChooose a function, 1 for getInt, 2 for getFloat, 3 for checkPrime: "))
+mainChoice = int(input("\nChoose a function, 1 for getInt, 2 for getFloat, 3 for checkPrime: "))
 if mainChoice == 1:
     print(getInt("(getInt) Enter a integer: "))
 if mainChoice == 2:
