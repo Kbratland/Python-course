@@ -6,7 +6,7 @@ time.sleep(1)
 count = 0
 while (count < 25):
     print ("Count is", count) 
-    time.sleep (0.25)
+    time.sleep(0.25)
     count += 1
 if (count == 25):
     print("Count is", count)

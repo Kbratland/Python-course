@@ -39,21 +39,31 @@ def getFloat(promptIn, minFloat=None, maxFloat=None):
             time.sleep(0.15)
             print("\nThat is not a float, try again")
             continue
-
-
-# time.sleep(0.15)
-# print(getInt("Int, No limit "))
-# time.sleep(0.15)
-# print(getFloat("Float, No limit "))
-# time.sleep(0.15)
-# print(getInt("\nInt min 10 ", minInt=10))
-# time.sleep(0.15)
-# print(getFloat(f"\nFloat min 10 ", minFloat=10))
-# time.sleep(0.15)
-# print(getInt("\nInt max 10 ", maxInt=10))
-# time.sleep(0.15)
-# print(getFloat(f"\nFloat max 10 ", maxFloat=10))
-# time.sleep(0.15)
-# print(getInt("\nInt min 10, max 100 ", minInt=10, maxInt=100))
-# time.sleep(0.15)
-# print(getFloat(f"\nFloat min 10 ", minFloat=10, maxFloat=100))
+        
+def checkPrime(promptIn, printTests = False):
+    while True:
+        time.sleep(0.15)
+        numIn = input("\n" + str(promptIn))
+        print("")
+        try:
+            numIn = int(numIn)
+            fails = int(0)
+            for lp in range(2,numIn):
+                
+                numDiv = lp
+                numSub = numIn
+                if printTests:
+                    print(f"Testing {numSub} % {numDiv}, result is {numSub % numDiv}")
+                if numSub % numDiv == 0:
+                    fails += 1
+                lp += 1
+            if fails != 0:
+                return f"\nThe number {numIn} is not prime\n"
+            else:
+                return f"\nThe number {numIn} is prime\n"
+        except:
+            print("\nThats not an integer, try again")
+            continue
+        
+print(checkPrime("Enter a integer: "))
+print(checkPrime("Enter a integer: ",True))
