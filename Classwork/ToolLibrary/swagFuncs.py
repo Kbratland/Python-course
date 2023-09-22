@@ -3,7 +3,7 @@ import time
 
 def getInt(promptIn, minInt=None, maxInt=None):
     while True:
-        intIn = input(promptIn)
+        intIn = input("\n" + str(promptIn))
         try:
             intIn = int(intIn)
             if minInt != None and intIn < minInt:
@@ -23,7 +23,7 @@ def getInt(promptIn, minInt=None, maxInt=None):
 
 def getFloat(promptIn, minFloat=None, maxFloat=None):
     while True:
-        floatIn = input(promptIn)
+        floatIn = input("\n" + str(promptIn))
         try:
             floatIn = float(floatIn)
             if minFloat != None and floatIn < minFloat:
