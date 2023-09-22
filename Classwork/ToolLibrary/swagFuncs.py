@@ -39,31 +39,26 @@ def getFloat(promptIn, minFloat=None, maxFloat=None):
             time.sleep(0.15)
             print("\nThat is not a float, try again")
             continue
-        
-def checkPrime(promptIn, printTests = False):
+
+
+def checkPrime(promptIn, printTests=False):
     while True:
         time.sleep(0.15)
         numIn = input("\n" + str(promptIn))
-        print("")
         try:
             numIn = int(numIn)
-            fails = int(0)
-            for lp in range(2,numIn):
-                
+            for lp in range(2, numIn):
                 numDiv = lp
                 numSub = numIn
                 if printTests:
-                    print(f"Testing {numSub} % {numDiv}, result is {numSub % numDiv}")
+                    print(
+                        f"Testing {numSub} % {numDiv}, result is {numSub % numDiv}")
                 if numSub % numDiv == 0:
-                    fails += 1
+                    return f"\nThe number {numIn} is not prime\n"
                 lp += 1
-            if fails != 0:
-                return f"\nThe number {numIn} is not prime\n"
-            else:
-                return f"\nThe number {numIn} is prime\n"
+            return f"\nThe number {numIn} is prime\n"
         except:
-            print("\nThats not an integer, try again")
+            print("\nThats not an integer, try again\n")
             continue
-        
-print(checkPrime("Enter a integer: "))
-print(checkPrime("Enter a integer: ",True))
+
+
