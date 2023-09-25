@@ -13,7 +13,7 @@ def submit():
     name=name_var.get()
     name_var.set("")
     if(name != ""):
-        listbox.insert(num, name)
+        listbox.insert(num,f"{num + 1}. " + name)
         num += 1
         
 
