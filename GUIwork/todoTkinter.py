@@ -1,11 +1,11 @@
-import tkinter as tk
+from tkinter import *
 
-root=tk.Tk()
+root=Tk()
 root.title("TODO List")
 num = 0
 # root.geometry(f"350x1100")
 
-name_var=tk.StringVar()
+name_var=StringVar()
 
 def submit():
     global listbox
@@ -19,18 +19,18 @@ def submit():
 
 def delete():
     global num
-    listbox.delete(tk.ANCHOR)
+    listbox.delete(ANCHOR)
     num -=1
 
-name_label = tk.Label(root, text = ' Add to Todo List', font=('calibre',20, 'bold'))
+name_label = Label(root, text = ' Add to Todo List', font=('calibre',20, 'bold'))
 
-name_entry = tk.Entry(root,textvariable = name_var, font=('calibre',12,'normal'),bg="black")
+name_entry = Entry(root,textvariable = name_var, font=('calibre',12,'normal'),bg="black")
 
-sub_btn=tk.Button(root,text = 'Enter', command = submit)
+sub_btn=Button(root,text = 'Enter', command = submit)
 
-sub_btn2=tk.Button(root,text = 'Remove', command = delete)
+sub_btn2=Button(root,text = 'Remove', command = delete)
 
-listbox = tk.Listbox(root,bg="black",height=num,width=40)
+listbox = Listbox(root,bg="black",height=num,width=40)
 
 name_label.grid(row=0,column=0)
 name_entry.grid(row=1,column=0)
