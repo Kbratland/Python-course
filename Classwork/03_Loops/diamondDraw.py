@@ -63,7 +63,8 @@ while loopCode == True:
             diSpace = str(
                 input("\nWhat should i make the spaces out of? \n\n" + end))
             if len(diSpace) != 1:
-                print("\nYou can only use one character for spaces, lets try again\n" + end)
+                print(
+                    "\nYou can only use one character for spaces, lets try again\n" + end)
                 continue
             else:
                 break

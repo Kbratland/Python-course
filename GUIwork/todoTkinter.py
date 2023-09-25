@@ -3,7 +3,7 @@ import tkinter as tk
 root=tk.Tk()
 root.title("TODO List")
 num = 0
-root.geometry(f"350x1100")
+# root.geometry(f"350x1100")
 
 name_var=tk.StringVar()
 

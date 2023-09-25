@@ -63,7 +63,7 @@ def scissors():
     enChoice = random.randrange(0, 7)
     if (enChoice == 1 or enChoice == 4):
         text = "You picked scissors, I picked rock, I Win, Play again?"
-        enScore += 1 
+        enScore += 1
     elif (enChoice == 2 or enChoice == 5):
         text = "You picked scissors, I picked paper, You Win, Play again?"
         score += 1

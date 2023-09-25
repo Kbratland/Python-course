@@ -51,7 +51,8 @@ def checkPrime(promptIn, printTests=False):
                 numDiv = lp
                 numSub = numIn
                 if printTests:
-                    print(f"Testing {numSub} % {numDiv}, result is {numSub % numDiv}")
+                    print(
+                        f"Testing {numSub} % {numDiv}, result is {numSub % numDiv}")
                 if numSub % numDiv == 0:
                     return f"\nThe number {numIn} is not prime\n"
                 lp += 1
@@ -59,5 +60,3 @@ def checkPrime(promptIn, printTests=False):
         except:
             print("\nThats not an integer, try again\n")
             continue
-
-
