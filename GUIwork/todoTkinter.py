@@ -19,7 +19,8 @@ def submit():
 def delete():
     global num
     listbox.delete(ANCHOR)
-    num -=1
+    if num>0:
+        num -=1
 
 name_label = Label(root, text = ' Add to Todo List', font=('calibre',20, 'bold'))
 
