@@ -7,6 +7,7 @@ num = 0
 name_var = StringVar()
 num_var = IntVar()
 
+
 def submit(event):
     global listbox
     global num
@@ -15,6 +16,7 @@ def submit(event):
     if (name != ""):
         listbox.insert(num, f"{num + 1}. " + name)
         num += 1
+
 
 def changeEntry():
     global listbox
@@ -25,11 +27,13 @@ def changeEntry():
         listbox.insert(changeNum, f"{changeNum + 1}. " + name)
         listbox.delete(changeNum + 1)
 
+
 def delete():
     global num
     listbox.delete(ANCHOR)
     if num > 0:
         num -= 1
+
 
 root.bind('<Return>', submit)
 
