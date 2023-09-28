@@ -3,9 +3,9 @@ import random
 numList = []
 
 
-def listGen(amount):
+def listGen(listIn,amount):
     for lp in range(amount):
-        numList.append(random.randint(0, 21))
+        listIn.append(random.randint(0, 21))
         lp += 1
 
 
@@ -25,6 +25,6 @@ def compareNum(listIn):
     return lowestNum
 
 
-listGen(50)
+listGen(numList,50)
 print(numList)
 print(compareNum(numList), "Is the lowest")
