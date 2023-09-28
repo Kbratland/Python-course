@@ -12,7 +12,7 @@ def listGen(listIn,amount):
 def minNum(listIn):
     holdNum = 0
     checkNum = 1
-    for lpv in range(len(listIn) - 1):
+    for lp in range(len(listIn) - 1):
         num1 = listIn[holdNum]
         num2 = listIn[checkNum]
         if num2 < num1:
@@ -21,7 +21,7 @@ def minNum(listIn):
             checkNum += 1
         else:
             checkNum += 1
-        lpv += 1
+        lp += 1
     return lowestNum
 
 
