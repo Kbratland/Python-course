@@ -81,4 +81,4 @@ def minNum(listIn):
         else:
             checkNum += 1
         lp += 1
-    return lowestNum
+    return str(lowestNum) + " Is the lowest"

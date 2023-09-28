@@ -22,9 +22,9 @@ def minNum(listIn):
         else:
             checkNum += 1
         lp += 1
-    return lowestNum
+    return str(lowestNum) + " Is the lowest"
 
 
 listGen(numList,50)
 print(numList)
-print(minNum(numList), "Is the lowest")
+print(minNum(numList))
