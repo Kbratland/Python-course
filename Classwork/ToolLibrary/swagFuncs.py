@@ -68,7 +68,7 @@ def listGen(listIn,amount):
         lp += 1
 
 
-def compareNum(listIn):
+def minNum(listIn):
     holdNum = 0
     checkNum = 1
     for lpv in range(len(listIn) - 1):

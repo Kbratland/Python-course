@@ -9,7 +9,7 @@ def listGen(listIn,amount):
         lp += 1
 
 
-def compareNum(listIn):
+def minNum(listIn):
     holdNum = 0
     checkNum = 1
     for lpv in range(len(listIn) - 1):
@@ -27,4 +27,4 @@ def compareNum(listIn):
 
 listGen(numList,50)
 print(numList)
-print(compareNum(numList), "Is the lowest")
+print(minNum(numList), "Is the lowest")
