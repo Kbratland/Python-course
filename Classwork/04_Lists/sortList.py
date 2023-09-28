@@ -5,18 +5,18 @@ numList = []
 
 def listGen(amount):
     for lp in range(amount):
-        numList.append(random.randint(-10, 10))
+        numList.append(random.randint(0, 21))
         lp += 1
 
 
-def compareNum():
+def compareNum(listIn):
     holdNum = 0
     checkNum = 1
-    for lpv in range(len(numList) - 1):
-        num1 = numList[holdNum]
-        num2 = numList[checkNum]
+    for lpv in range(len(listIn) - 1):
+        num1 = listIn[holdNum]
+        num2 = listIn[checkNum]
         if num2 < num1:
-            lowestNum = numList[checkNum]
+            lowestNum = listIn[checkNum]
             holdNum = checkNum
             checkNum += 1
         else:
@@ -27,4 +27,4 @@ def compareNum():
 
 listGen(50)
 print(numList)
-print(compareNum(), "Is the lowest")
+print(compareNum(numList), "Is the lowest")
