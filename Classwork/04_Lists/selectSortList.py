@@ -10,7 +10,7 @@ def listGen(listIn,amount):
 
 
 def minNum(listIn):
-    lowestNum = 0
+    lowestNum = listIn[0]
     holdNum = 0
     checkNum = 1
     for lp in range(len(listIn) - 1):
@@ -27,15 +27,16 @@ def minNum(listIn):
 
 def sortList(listIn):
     tempList = []
-    for lp in range(len(listIn) - 1):
-        tempNum = minNum(listIn)
-        print(f"Temp is {tempNum}")
-        tempList.append(tempNum)
+    tempLen = len(listIn)
+    lp = 0
+    while lp < tempLen:
+        tempNum = minNum(listIn)         
         listIn.remove(tempNum)
+        tempList.append(tempNum)
         lp += 1
     return tempList
 
 
 listGen(numList,50)
-print(numList)
-print(sortList(numList))
+print("\nOriginal List:",numList)
+print("\nThe sorted list is:",sortList(numList))

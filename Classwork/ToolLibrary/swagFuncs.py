@@ -62,13 +62,15 @@ def checkPrime(promptIn, printTests=False):
             print("\nThats not an integer, try again\n")
             continue
 
-def listGen(listIn,amount):
+
+def listGen(listIn, amount):
     for lp in range(amount):
         listIn.append(random.randint(0, 21))
         lp += 1
 
 
 def minNum(listIn):
+    lowestNum = listIn[0]
     holdNum = 0
     checkNum = 1
     for lp in range(len(listIn) - 1):
@@ -81,4 +83,16 @@ def minNum(listIn):
         else:
             checkNum += 1
         lp += 1
-    return lowestNum
+    return int(lowestNum)
+
+
+def sortList(listIn):
+    tempList = []
+    tempLen = len(listIn)
+    lp = 0
+    while lp < tempLen:
+        tempNum = minNum(listIn)
+        listIn.remove(tempNum)
+        tempList.append(tempNum)
+        lp += 1
+    return tempList
