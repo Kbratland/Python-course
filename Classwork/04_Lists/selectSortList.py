@@ -5,7 +5,7 @@ numList = []
 
 def listGen(listIn,amount):
     for lp in range(amount):
-        listIn.append(random.randint(0, 21))
+        listIn.append(random.randint(0, 11))
         lp += 1
 
 
@@ -37,6 +37,19 @@ def sortList(listIn):
     return tempList
 
 
-listGen(numList,50)
-print("\nOriginal List:",numList)
-print("\nThe sorted list is:",sortList(numList))
+def quickSort(listIn,lowIndex,highIndex):
+    pivot = lowIndex
+    checkNum = highIndex
+    if(listIn[pivot] < listIn[checkNum]):
+        print(listIn)
+        (listIn[pivot],)
+        temp = pivot
+        pivot = checkNum
+        checkNum = temp + 1
+        print(listIn)
+    return listIn
+
+listGen(numList,13)
+quickSort(numList,0,len(numList))
+# print("\nOriginal List:",numList)
+# print("\nThe sorted list is:",sortList(numList))
