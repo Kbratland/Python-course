@@ -37,19 +37,45 @@ def sortList(listIn):
     return tempList
 
 
-def quickSort(listIn,lowIndex,highIndex):
-    pivot = lowIndex
-    checkNum = highIndex
-    if(listIn[pivot] < listIn[checkNum]):
-        print(listIn)
-        temp = pivot
-        pivot = checkNum
-        checkNum = temp + 1
-        (listIn[pivot],listIn[checkNum]) = (listIn[checkNum],listIn[pivot])
-        print(listIn)
-    return listIn
+def quickSort(listIn,lowIndex,highIndex,pivotIndex):
+    pivot = pivotIndex
+    lowIn = lowIndex
+    highIn = highIndex
+    print(f"\nStart high is {highIn} (value is {listIn[highIn]}), start low is {lowIn} (value is {listIn[lowIn]}), start pivot is {pivot} (value is {listIn[pivot]})")
+    print(listIn,"\n")
+    goingUp = True
+    swap = True
+    while swap:
+        print(f"\nHigh is {highIn} (value is {listIn[highIn]}),  low is {lowIn} (value is {listIn[lowIn]}),  pivot is {pivot} (value is {listIn[pivot]})")
+        print("\n",listIn)
+        if goingUp:
+            
+            if listIn[pivot] > listIn[highIn]:
+                print("changing direction")
+                (listIn[pivot],listIn[highIn]) = (listIn[highIn],listIn[pivot])
+                if highIn == pivot:
+                    swap = False
+                pivot = highIn
+                lowIn +=1
+                goingUp = False
+            else:
+                highIn -= 1
+        else:
+            
+            if listIn[pivot] < listIn[lowIn]:
+                print("changing direction")
+                (listIn[pivot],listIn[lowIn]) = (listIn[lowIn],listIn[pivot])
+                if lowIn == pivot:
+                    swap = False
+                pivot = lowIn
+                highIn -=1
+                goingUp = True
+            else:
+                lowIn +=1
+    print(f"\nEnd high is {highIn} (value is {listIn[highIn]}), end low is {lowIn} (value is {listIn[lowIn]}), end pivot is {pivot} (value is {listIn[pivot]})")
+    print(listIn)
 
-listGen(numList,13)
-print(quickSort(numList,0,len(numList)-1))
+listGen(numList,25)
+print(quickSort(numList,0,len(numList)-1,0))
 # print("\nOriginal List:",numList)
 # print("\nThe sorted list is:",sortList(numList))
