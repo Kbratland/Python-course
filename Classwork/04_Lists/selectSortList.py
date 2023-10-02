@@ -42,14 +42,14 @@ def quickSort(listIn,lowIndex,highIndex):
     checkNum = highIndex
     if(listIn[pivot] < listIn[checkNum]):
         print(listIn)
-        (listIn[pivot],)
         temp = pivot
         pivot = checkNum
         checkNum = temp + 1
+        (listIn[pivot],listIn[checkNum]) = (listIn[checkNum],listIn[pivot])
         print(listIn)
     return listIn
 
 listGen(numList,13)
-quickSort(numList,0,len(numList))
+print(quickSort(numList,0,len(numList)-1))
 # print("\nOriginal List:",numList)
 # print("\nThe sorted list is:",sortList(numList))

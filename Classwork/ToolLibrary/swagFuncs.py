@@ -63,9 +63,9 @@ def checkPrime(promptIn, printTests=False):
             continue
 
 
-def listGen(listIn, amount):
+def listGen(listIn, amount,low = 0,high = 100):
     for lp in range(amount):
-        listIn.append(random.randint(0, 21))
+        listIn.append(random.randint(low, high))
         lp += 1
 
 
@@ -87,6 +87,7 @@ def minNum(listIn):
 
 
 def sortList(listIn):
+    #833 number sorted per second
     tempList = []
     tempLen = len(listIn)
     lp = 0
