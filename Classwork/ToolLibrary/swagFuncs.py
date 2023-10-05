@@ -97,3 +97,42 @@ def sortList(listIn):
         tempList.append(tempNum)
         lp += 1
     return tempList
+
+def quickSort(listIn, lowIndex, highIndex, pivotIndex):
+    pivot = pivotIndex
+    lowIn = lowIndex
+    highIn = highIndex
+    goingUp = True
+    swap = True
+    while swap and highIn > lowIn:
+        if goingUp:
+            if listIn[pivot] > listIn[highIn]:
+                (listIn[pivot], listIn[highIn]) = (
+                    listIn[highIn], listIn[pivot])
+                pivot = highIn
+                lowIn += 1
+                goingUp = False
+            else:
+                highIn -= 1
+        else:
+
+            if listIn[pivot] < listIn[lowIn]:
+                (listIn[pivot], listIn[lowIn]) = (listIn[lowIn], listIn[pivot])
+                pivot = lowIn
+                highIn -= 1
+                goingUp = True
+            else:
+                lowIn += 1
+
+    if pivot > lowIndex:
+        quickSort(listIn, 0, pivot-1, 0)
+    if pivot < highIndex:
+        quickSort(listIn, pivot+1, highIndex, pivot+1)
+    else:
+        print(listIn)
+        # return listIn
+
+numList = []
+listGen(numList,20)
+print(numList)
+print(quickSort(numList, 0, len(numList)-1, 0))
