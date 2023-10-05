@@ -135,4 +135,6 @@ def quickSort(listIn, lowIndex, highIndex, pivotIndex):
 numList = []
 listGen(numList,20)
 print(numList)
-print(quickSort(numList, 0, len(numList)-1, 0))
+quickSort(numList, 0, len(numList)-1, 0)
+print("qSort: ",numList)
+print(".sort():",numList.sort())

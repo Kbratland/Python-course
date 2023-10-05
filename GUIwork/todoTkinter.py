@@ -1,4 +1,5 @@
 from tkinter import *
+from shelve import *
 
 root = Tk()
 root.title("TODO List")
@@ -6,6 +7,8 @@ num = 0
 
 name_var = StringVar()
 num_var = IntVar()
+
+listbox = Listbox(root, height=num, width=40)
 
 
 def submit(event):
@@ -33,7 +36,26 @@ def delete():
     listbox.delete(ANCHOR)
     if num > 0:
         num -= 1
+        
+def quitList(listBin):
+    listFile = open("listFile")
+    tempList = []
+    for lp in range(0,num):
+        tempList.append(listBin.get(lp))
+    print(tempList)
+    listFile["listFile"] = tempList
+    listFile.close()
+    exit()
+    
+def loadList(listBin):
+    listFile = open("listFile")
+    tempList = listFile["listFile"]
+    print(tempList)
+    for lp in range(len(tempList)-1):
+        listBin.insert(lp,tempList[lp])
+    listFile.close()
 
+loadList(listbox)
 
 root.bind('<Return>', submit)
 
@@ -53,7 +75,9 @@ sub_btn2 = Button(root, text='Remove Selected', command=delete)
 
 sub_btn3 = Button(root, text="Edit", command=changeEntry)
 
-listbox = Listbox(root, height=num, width=40)
+
+
+exitButton = Button(root,text = "Save and quit",command=lambda: quitList(listbox))
 
 name_label.grid(row=0, column=0)
 name_entry.grid(row=1, column=0)
@@ -63,5 +87,6 @@ num_label.grid(row=4, column=0)
 num_entry.grid(row=5, column=0)
 sub_btn3.grid(row=6, column=0)
 listbox.grid(row=7, column=0)
+exitButton.grid(row=8,column=0)
 
 root.mainloop()
