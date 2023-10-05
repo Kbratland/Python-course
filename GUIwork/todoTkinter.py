@@ -49,10 +49,10 @@ def quitList(listBin):
     
 def loadList(listBin):
     listFile = open("listFile")
-    tempList = listFile["listFile"]
-    print(tempList)
-    for lp in range(len(tempList)-1):
-        listBin.insert(lp,tempList[lp])
+    tempList2 = listFile["listFile"]
+    print(tempList2)
+    for lp in range(len(tempList2)-1):
+        listBin.insert(lp,tempList2[lp])
     listFile.close()
 
 loadList(listbox)
