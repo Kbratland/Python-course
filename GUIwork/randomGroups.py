@@ -1,6 +1,7 @@
 from random import *
 from tkinter import *
 from shelve import *
+from math import *
 
 root = Tk()
 root.title("The Student Organizer 2.0")
@@ -10,11 +11,12 @@ name_var = StringVar()
 num_var = IntVar()
 ginVar = StringVar()
 
-listbox = Listbox(root, height=num, width=40)
-list_2 = Listbox(root, height=num, width=40)
+listbox = Listbox(root, height=num, width=30)
+list_2 = Listbox(root, height=num, width=30)
 
 
 def submit(event):
+    print("doing something")
     global listbox
     global num
     name = name_var.get()
@@ -25,6 +27,7 @@ def submit(event):
 
 
 def changeEntry():
+    print("doing something")
     global listbox
     global num
     changeNum = num_var.get() - 1
@@ -35,6 +38,7 @@ def changeEntry():
 
 
 def delete():
+    print("doing something")
     global num
     listbox.delete(ANCHOR)
     if num > 0:
@@ -42,6 +46,7 @@ def delete():
 
 
 def quitList(listBin, list2):
+    print("doing something")
     global num
     listFile = open("listFile")
     tempList = []
@@ -58,6 +63,7 @@ def quitList(listBin, list2):
 
 
 def loadList(listBin, list2):
+    print("doing something")
     global num
     try:
         listFile = open("listFile")
@@ -73,16 +79,34 @@ def loadList(listBin, list2):
         pass
 
 
-def randomize(listIn, listOut, amount):
+def randomize(listIn, listOut, amount, mode):
+    print("doing something")
     global num
     listOut.delete(0, END)
-    # print("starting randomize")
     tempList = []
     for lp in range(num):
         tempList.append(listIn.get(lp))
-    for lp in range(len(tempList)):
-        listOut.insert(lp, tempList[lp] + f" is in group {randint(1,amount)}")
-    # print(tempList)
+    if mode == 1:
+        for lp in range(len(tempList)):
+            listOut.insert(lp, tempList[lp] +
+                           f" is in group {randint(1,amount)}")
+    else:
+        temp2 = []
+        holdInt = len(tempList)
+        for main in range(amount):
+            for lp in range(ceil(holdInt/amount)):
+                print(ceil(holdInt/amount))
+                try:
+                    wordIn = tempList.pop(randint(0, len(tempList)-1))
+                except:
+                    break
+                if wordIn != "":
+                    temp2.append(wordIn + f" is in group {main+1}")
+                print(tempList)
+            main += 1
+    if mode != 1:
+        for lp in range(0, len(temp2)):
+            listOut.insert(lp, temp2[lp])
 
 
 loadList(listbox, list_2)
@@ -103,8 +127,10 @@ sub_btn = Button(root, text='Enter', command=lambda: submit(1))
 
 sub_btn2 = Button(root, text='Remove Selected', command=delete)
 
-sub_btn4 = Button(root, text="Group students", command=lambda: randomize(
-    listbox, list_2, int(ginVar.get())))
+sub_btn4 = Button(root, text="Group by name", command=lambda: randomize(
+    listbox, list_2, int(ginVar.get()), mode=1))
+sub_btn5 = Button(root, text="Group by number", command=lambda: randomize(
+    listbox, list_2, int(ginVar.get()), mode=2))
 
 sub_btn3 = Button(root, text="Edit", command=changeEntry)
 
@@ -118,20 +144,21 @@ n1_label = Label(root, text='Names:', font=('calibre', 15, 'bold'))
 exitButton = Button(root, text="Save and quit",
                     command=lambda: quitList(listbox, list_2))
 
-name_label.grid(row=0, column=0)
-name_entry.grid(row=1, column=0)
-sub_btn.grid(row=2, column=0)
-sub_btn2.grid(row=3, column=0)
-groups_label.grid(row=4, column=0)
-groups_entry.grid(row=5, column=0)
-sub_btn4.grid(row=6, column=0)
-num_label.grid(row=7, column=0)
-num_entry.grid(row=8, column=0)
-sub_btn3.grid(row=9, column=0)
-n1_label.grid(row=10, column=0)
-listbox.grid(row=11, column=0)
-g2_label.grid(row=12, column=0)
-list_2.grid(row=13, column=0)
-exitButton.grid(row=14, column=0, padx=10, pady=10)
+name_label.grid(row=0, column=1)
+name_entry.grid(row=1, column=1)
+sub_btn.grid(row=2, column=1)
+sub_btn2.grid(row=3, column=1)
+groups_label.grid(row=4, column=1)
+groups_entry.grid(row=5, column=1)
+sub_btn4.grid(row=5, column=0)
+sub_btn5.grid(row=5, column=2)
+num_label.grid(row=6, column=1)
+num_entry.grid(row=7, column=1)
+sub_btn3.grid(row=8, column=1)
+n1_label.grid(row=9, column=1)
+listbox.grid(row=10, column=1)
+g2_label.grid(row=11, column=1)
+list_2.grid(row=12, column=1)
+exitButton.grid(row=13, column=1, padx=10, pady=10)
 
 root.mainloop()
