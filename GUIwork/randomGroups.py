@@ -16,7 +16,7 @@ list_2 = Listbox(root, height=num, width=30)
 
 
 def submit(event):
-    print("doing something")
+    print("doing submit")
     global listbox
     global num
     name = name_var.get()
@@ -27,7 +27,7 @@ def submit(event):
 
 
 def changeEntry():
-    print("doing something")
+    print("doing edit")
     global listbox
     global num
     changeNum = num_var.get() - 1
@@ -38,7 +38,7 @@ def changeEntry():
 
 
 def delete():
-    print("doing something")
+    print("doing delete")
     global num
     listbox.delete(ANCHOR)
     if num > 0:
@@ -46,7 +46,7 @@ def delete():
 
 
 def quitList(listBin, list2):
-    print("doing something")
+    print("doing quit")
     global num
     listFile = open("listFile")
     tempList = []
@@ -62,7 +62,7 @@ def quitList(listBin, list2):
 
 
 def loadList(listBin, list2):
-    print("doing something")
+    print("doing load")
     global num
     try:
         listFile = open("listFile")
@@ -79,7 +79,7 @@ def loadList(listBin, list2):
 
 
 def randomize(listIn, listOut, amount, mode):
-    print("doing something")
+    print("doing randomize")
     global num
     listOut.delete(0, END)
     tempList = []
