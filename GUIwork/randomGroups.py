@@ -54,7 +54,6 @@ def quitList(listBin, list2):
     for lp in range(num):
         tempList.append(listBin.get(lp))
         temp2.append(list2.get(lp))
-    # print(tempList)
     listFile["groupHold"] = temp2
     listFile["numHold"] = num
     listFile["listHold"] = tempList
