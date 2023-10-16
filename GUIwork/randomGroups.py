@@ -51,9 +51,15 @@ def quitList(listBin, list2):
     listFile = open("listFile")
     tempList = []
     temp2 = []
-    for lp in range(num):
-        tempList.append(listBin.get(lp))
-        temp2.append(list2.get(lp))
+    try:
+        for lp in range(num+1):
+            tempList.append(listBin.get(lp))
+            temp2.append(list2.get(lp))
+    except:
+        for lp in range(num):
+            tempList.append(listBin.get(lp))
+            temp2.append(list2.get(lp))
+    num = len(tempList)
     listFile["groupHold"] = temp2
     listFile["numHold"] = num
     listFile["listHold"] = tempList
@@ -69,7 +75,6 @@ def loadList(listBin, list2):
         tempList2 = listFile["listHold"]
         tempG = listFile["groupHold"]
         num = listFile["numHold"]
-        # print(tempList2)
         for lp in range(len(tempList2)-1):
             listBin.insert(lp, tempList2[lp])
             list2.insert(lp, tempG[lp])
@@ -79,17 +84,35 @@ def loadList(listBin, list2):
 
 
 def randomize(listIn, listOut, amount, mode):
-    print("doing randomize")
+    
     global num
     listOut.delete(0, END)
     tempList = []
     for lp in range(num):
         tempList.append(listIn.get(lp))
     if mode == 1:
+        print("doing randomize by name")
+        allowedNum = []
         for lp in range(len(tempList)):
-            listOut.insert(lp, tempList[lp] +
-                           f" is in group {randint(1,amount)}")
+            allowedNum.append(lp)
+        if (len(tempList)-1) % amount != 0:
+            groupAmount = ceil((len(tempList)-1)/(amount))
+        else:
+            groupAmount = int((len(tempList)-1)/amount)
+        print("amount is",amount,"Group Amount:",groupAmount,"length is:",len(tempList)-1)
+        for curSpot in range(amount):
+            for lp in range(groupAmount):
+                tNum = randint(0,len(allowedNum))
+                try:
+                    randIn = allowedNum[tNum]
+                    tempList[randIn] += f" is in group {curSpot+1}"
+                    del allowedNum[tNum]
+                except:
+                    pass
+        for lp in range(len(tempList)-1):
+            listOut.insert(lp, tempList[lp])
     else:
+        print("doing randomize by number")
         temp2 = []
         holdInt = len(tempList)
         for main in range(amount):
