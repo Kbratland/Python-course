@@ -59,15 +59,10 @@ def quitList(listBin, list2):
     listFile = open("listFile")
     tempList = []
     temp2 = []
-    try:
-        for lp in range(num+1):
-            tempList.append(listBin.get(lp))
-            temp2.append(list2.get(lp))
-    except:
-        for lp in range(num):
-            tempList.append(listBin.get(lp))
-            temp2.append(list2.get(lp))
-    num = len(tempList)
+    for lp in range(num):
+        tempList.append(listBin.get(lp))
+        temp2.append(list2.get(lp))
+    num = len(tempList)-1
     listFile["groupHold"] = temp2
     listFile["numHold"] = num
     listFile["listHold"] = tempList
@@ -77,7 +72,7 @@ def quitList(listBin, list2):
 
 def loadList(listBin, list2):
 
-    print("\n", "execute load")
+    
 
     global num
     try:
@@ -91,6 +86,7 @@ def loadList(listBin, list2):
         listFile.close()
     except:
         pass
+    print("\n", f"execute load, num is {num}")
 
 
 def randomize(listIn, listOut, amount, mode,debug):
@@ -118,7 +114,7 @@ def randomize(listIn, listOut, amount, mode,debug):
             print("\n", f"length of allowed list is {len(allowedNum)}")
 
         if (len(tempList)-1) % amount != 0:
-            groupAmount = ceil((len(tempList)-1)/(amount))
+            groupAmount = ceil((len(tempList))/(amount))
             if debug:
                 print("\n", f"Group amount is {groupAmount} (ceilinged)")
 
@@ -132,7 +128,7 @@ def randomize(listIn, listOut, amount, mode,debug):
                 if debug:
                     print("\n", f"Current group is {curSpot} at person {lp}")
 
-                tNum = randint(1, len(allowedNum))
+                tNum = randint(0, len(allowedNum))
                 if debug:
                     print("\n", f"tNum is {tNum}")
 
