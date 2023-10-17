@@ -93,7 +93,7 @@ def loadList(listBin, list2):
         pass
 
 
-def randomize(listIn, listOut, amount, mode):
+def randomize(listIn, listOut, amount, mode,debug):
 
     global num
     listOut.delete(0, END)
@@ -102,56 +102,59 @@ def randomize(listIn, listOut, amount, mode):
         tempList.append(listIn.get(lp))
 
     if mode == 1:
-
-        print("\n", "--------------------------------------------------------------------------------execute randomize by name--------------------------------------------------------------------------------")
-
-        print("\n", f"amount is {amount}")
+        if debug:
+            print("\n", "--------------------------------------------------------------------------------execute randomize by name--------------------------------------------------------------------------------")
+        else:
+            print("\n","execute randomize by name")
+        if debug:
+            print("\n", f"amount is {amount}")
+            print("\n", f"num is {num}")
 
         allowedNum = []
 
-        for lp in range(len(tempList)-2):
+        for lp in range(len(tempList)-1):
             allowedNum.append(lp)
-
-        print("\n", f"length of allowed list is {len(allowedNum)}")
+        if debug:
+            print("\n", f"length of allowed list is {len(allowedNum)}")
 
         if (len(tempList)-1) % amount != 0:
             groupAmount = ceil((len(tempList)-1)/(amount))
-
-            print("\n", f"Group amount is {groupAmount} (ceilinged)")
+            if debug:
+                print("\n", f"Group amount is {groupAmount} (ceilinged)")
 
         else:
             groupAmount = int((len(tempList)-1)/amount)
-
-            print("\n", f"Group amount is {groupAmount} (Divisible)")
+            if debug:
+                print("\n", f"Group amount is {groupAmount} (Divisible)")
 
         for curSpot in range(amount):
             for lp in range(groupAmount):
-                
-                print("\n", f"Current group is {curSpot} at person {lp}")
+                if debug:
+                    print("\n", f"Current group is {curSpot} at person {lp}")
 
                 tNum = randint(1, len(allowedNum))
-
-                print("\n", f"tNum is {tNum}")
+                if debug:
+                    print("\n", f"tNum is {tNum}")
 
                 try:
 
                     randIn = allowedNum[tNum]
-
-                    print(
-                        "\n", f"The random index is {randIn} out of {allowedNum}")
+                    if debug:
+                        print(
+                            "\n", f"The random index is {randIn} out of {allowedNum}")
 
                     tempList[randIn] += f" is in group {curSpot+1}"
-
-                    print("\n", f"the new entry is {tempList[randIn]}")
+                    if debug:
+                        print("\n", f"the new entry is {tempList[randIn]}")
 
                     del allowedNum[tNum]
                 except Exception as e:
-
-                    print("\n", f"excepted, error is {e}")
+                    if debug:
+                        print("\n", f"excepted, error is {e}")
 
                     pass
-
-        print("\n", "Outing")
+        if debug:
+            print("\n", "Outing")
 
         for lp in range(len(tempList)-1):
             listOut.insert(lp, tempList[lp])
@@ -201,9 +204,9 @@ sub_btn = Button(root, text='Enter', command=lambda: submit(1))
 sub_btn2 = Button(root, text='Remove Selected', command=delete)
 
 sub_btn4 = Button(root, text="Group by name", command=lambda: randomize(
-    listbox, list_2, int(ginVar.get()), mode=1))
+    listbox, list_2, int(ginVar.get()), mode=1,debug=True))
 sub_btn5 = Button(root, text="Group by number", command=lambda: randomize(
-    listbox, list_2, int(ginVar.get()), mode=2))
+    listbox, list_2, int(ginVar.get()), mode=2,debug=False))
 
 sub_btn3 = Button(root, text="Edit", command=changeEntry)
 
