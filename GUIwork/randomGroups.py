@@ -16,7 +16,9 @@ list_2 = Listbox(root, height=num, width=30)
 
 
 def submit(event):
-    print("doing submit")
+
+    print("\n", "execute submit")
+
     global listbox
     global num
     name = name_var.get()
@@ -27,7 +29,9 @@ def submit(event):
 
 
 def changeEntry():
-    print("doing edit")
+
+    print("\n", "execute edit")
+
     global listbox
     global num
     changeNum = num_var.get() - 1
@@ -38,7 +42,9 @@ def changeEntry():
 
 
 def delete():
-    print("doing delete")
+
+    print("\n", "execute delete")
+
     global num
     listbox.delete(ANCHOR)
     if num > 0:
@@ -46,7 +52,9 @@ def delete():
 
 
 def quitList(listBin, list2):
-    print("doing quit")
+
+    print("\n", "execute quit")
+
     global num
     listFile = open("listFile")
     tempList = []
@@ -68,7 +76,9 @@ def quitList(listBin, list2):
 
 
 def loadList(listBin, list2):
-    print("doing load")
+
+    print("\n", "execute load")
+
     global num
     try:
         listFile = open("listFile")
@@ -84,47 +94,89 @@ def loadList(listBin, list2):
 
 
 def randomize(listIn, listOut, amount, mode):
-    
+
     global num
     listOut.delete(0, END)
     tempList = []
     for lp in range(num):
         tempList.append(listIn.get(lp))
+
     if mode == 1:
-        print("doing randomize by name")
+
+        print("\n", "----------------------------------------execute randomize by name----------------------------------------")
+
+        print("\n", f"amount is {amount}")
+
         allowedNum = []
-        for lp in range(len(tempList)):
+
+        for lp in range(len(tempList)-2):
             allowedNum.append(lp)
+
+        print("\n", f"length of allowed list is {len(allowedNum)}")
+
         if (len(tempList)-1) % amount != 0:
             groupAmount = ceil((len(tempList)-1)/(amount))
+
+            print("\n", f"Group amount is {groupAmount}")
+
         else:
             groupAmount = int((len(tempList)-1)/amount)
-        print("amount is",amount,"Group Amount:",groupAmount,"length is:",len(tempList)-1)
+
+            print("\n", f"Group amount is {groupAmount}")
+
         for curSpot in range(amount):
             for lp in range(groupAmount):
-                tNum = randint(0,len(allowedNum))
+
+                print("\n", f"Current spot is {curSpot}")
+
+                tNum = randint(1, len(allowedNum))
+                # tNum -= 1
+
+                print("\n", f"tNum is {tNum}")
+
                 try:
+
                     randIn = allowedNum[tNum]
+
+                    print(
+                        "\n", f"The random index is {randIn} out of {allowedNum}")
+
                     tempList[randIn] += f" is in group {curSpot+1}"
+
+                    print("\n", f"the new entry is {tempList[randIn]}")
+
                     del allowedNum[tNum]
-                except:
+                except Exception as e:
+
+                    print("\n", f"excepted, error is {e}")
+
                     pass
+
+        print("\n", "Outing")
+
         for lp in range(len(tempList)-1):
             listOut.insert(lp, tempList[lp])
+
     else:
-        print("doing randomize by number")
+
+        print("\n", "execute randomize by number")
+
         temp2 = []
         holdInt = len(tempList)
         for main in range(amount):
             for lp in range(ceil(holdInt/amount)):
-                print(ceil(holdInt/amount))
+
+                print("\n", ceil(holdInt/amount))
+
                 try:
                     wordIn = tempList.pop(randint(0, len(tempList)-1))
                 except:
                     break
                 if wordIn != "":
                     temp2.append(wordIn + f" is in group {main+1}")
-                print(tempList)
+
+                print("\n", tempList)
+
             main += 1
     if mode != 1:
         for lp in range(0, len(temp2)):
