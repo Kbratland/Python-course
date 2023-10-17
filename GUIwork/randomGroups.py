@@ -122,7 +122,7 @@ def randomize(listIn, listOut, amount, mode):
         else:
             groupAmount = int((len(tempList)-1)/amount)
 
-            print("\n", f"Group amount is {groupAmount}(Divisible)")
+            print("\n", f"Group amount is {groupAmount} (Divisible)")
 
         for curSpot in range(amount):
             for lp in range(groupAmount):
