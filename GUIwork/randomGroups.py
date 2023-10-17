@@ -89,70 +89,69 @@ def loadList(listBin, list2):
     print("\n", f"execute load, num is {num}")
 
 
-def randomize(listIn, listOut, amount, mode,debug):
+def randomize(listIn, listOut, amount, mode):
 
-    global num
+    global num #num is amount of people in the list
     listOut.delete(0, END)
     tempList = []
     for lp in range(num):
         tempList.append(listIn.get(lp))
 
     if mode == 1:
-        if debug:
-            print("\n", "--------------------------------------------------------------------------------execute randomize by name--------------------------------------------------------------------------------")
-        else:
-            print("\n","execute randomize by name")
-        if debug:
-            print("\n", f"amount is {amount}")
-            print("\n", f"num is {num}")
+
+        print("\n", "----------------------------------------execute randomize by name----------------------------------------")
+
+        print("\n", f"amount is {amount}")
 
         allowedNum = []
 
-        for lp in range(len(tempList)-1):
+        for lp in range(len(tempList)):#I took out the minus 2
             allowedNum.append(lp)
-        if debug:
-            print("\n", f"length of allowed list is {len(allowedNum)}")
+       
+        print("\n", f"length of allowed list is {len(allowedNum)}")
 
-        if (len(tempList)-1) % amount != 0:
+        if (len(tempList)) % amount != 0:
             groupAmount = ceil((len(tempList))/(amount))
-            if debug:
-                print("\n", f"Group amount is {groupAmount} (ceilinged)")
+
+            print("\n", f"Group amount is {groupAmount} (ceilinged)")
 
         else:
-            groupAmount = int((len(tempList)-1)/amount)
-            if debug:
-                print("\n", f"Group amount is {groupAmount} (Divisible)")
+            groupAmount = int((len(tempList))/amount)
 
-        for curSpot in range(amount):
-            for lp in range(groupAmount):
-                if debug:
-                    print("\n", f"Current group is {curSpot} at person {lp}")
+            print("\n", f"Group amount is {groupAmount} (Divisible)")
 
-                tNum = randint(0, len(allowedNum))
-                if debug:
-                    print("\n", f"tNum is {tNum}")
+        for curSpot in range(amount): #loops through the groups
+            for lp in range(groupAmount): #choose a member of the group randomly
+
+                print("\n", f"Current spot is {curSpot}")
+                if (len(allowedNum) <= 1):
+                    tNum = 0
+                else:
+                    tNum = randint(0, len(allowedNum) - 1)
+                
+                print("\n", f"tNum is {tNum}")
 
                 try:
 
                     randIn = allowedNum[tNum]
-                    if debug:
-                        print(
-                            "\n", f"The random index is {randIn} out of {allowedNum}")
+
+                    print(
+                        "\n", f"The random index is {randIn} out of {allowedNum}")
 
                     tempList[randIn] += f" is in group {curSpot+1}"
-                    if debug:
-                        print("\n", f"the new entry is {tempList[randIn]}")
+
+                    print("\n", f"the new entry is {tempList[randIn]}")
 
                     del allowedNum[tNum]
                 except Exception as e:
-                    if debug:
-                        print("\n", f"excepted, error is {e}")
 
+                    print("\n", f"excepted, error is {e}")
+                    print(allowedNum)
                     pass
-        if debug:
-            print("\n", "Outing")
 
-        for lp in range(len(tempList)-1):
+        print("\n", "Outing")
+        print(tempList)
+        for lp in range(len(tempList)):
             listOut.insert(lp, tempList[lp])
 
     else:
