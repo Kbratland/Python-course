@@ -117,12 +117,12 @@ def randomize(listIn, listOut, amount, mode):
         if (len(tempList)-1) % amount != 0:
             groupAmount = ceil((len(tempList)-1)/(amount))
 
-            print("\n", f"Group amount is {groupAmount}")
+            print("\n", f"Group amount is {groupAmount} (ceilinged)")
 
         else:
             groupAmount = int((len(tempList)-1)/amount)
 
-            print("\n", f"Group amount is {groupAmount}")
+            print("\n", f"Group amount is {groupAmount}(Divisible)")
 
         for curSpot in range(amount):
             for lp in range(groupAmount):
