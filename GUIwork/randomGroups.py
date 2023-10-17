@@ -130,7 +130,6 @@ def randomize(listIn, listOut, amount, mode):
                 print("\n", f"Current spot is {curSpot}")
 
                 tNum = randint(1, len(allowedNum))
-                # tNum -= 1
 
                 print("\n", f"tNum is {tNum}")
 
