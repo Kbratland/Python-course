@@ -126,8 +126,8 @@ def randomize(listIn, listOut, amount, mode):
 
         for curSpot in range(amount):
             for lp in range(groupAmount):
-
-                print("\n", f"Current spot is {curSpot}")
+                
+                print("\n", f"Current group is {curSpot} at person {lp}")
 
                 tNum = randint(1, len(allowedNum))
 
