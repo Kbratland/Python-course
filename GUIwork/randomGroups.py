@@ -12,8 +12,8 @@ name_var = StringVar()
 num_var = IntVar()
 ginVar = StringVar()
 
-listbox = Listbox(root, height=num, width=30,bg="light blue",fg="black")
-list_2 = Listbox(root, height=num, width=30,bg="light blue",fg="black")
+listbox = Listbox(root, height=num, width=30, bg="light blue", fg="black")
+list_2 = Listbox(root, height=num, width=30, bg="light blue", fg="black")
 
 
 def submit(event):
@@ -95,38 +95,25 @@ def randomize(listIn, listOut, amount, mode):
         tempList.append(listIn.get(lp))
     if mode == 1:
         print("\n", "execute randomize by name")
-        # print("\n", f"amount is {amount}")
         allowedNum = []
-        for lp in range(len(tempList)):  # I took out the minus 2
+        for lp in range(len(tempList)):
             allowedNum.append(lp)
-        # print("\n", f"length of allowed list is {len(allowedNum)}")
         if (len(tempList)) % amount != 0:
             groupAmount = ceil((len(tempList))/(amount))
-            # print("\n", f"Group amount is {groupAmount} (ceilinged)")
         else:
             groupAmount = int((len(tempList))/amount)
-            # print("\n", f"Group amount is {groupAmount} (Divisible)")
-        for curSpot in range(amount):  # loops through the groups
-            for lp in range(groupAmount):  # choose a member of the group randomly
-                # print("\n", f"Current spot is {curSpot}")
+        for curSpot in range(amount):
+            for lp in range(groupAmount):
                 if (len(allowedNum) <= 1):
                     tNum = 0
                 else:
                     tNum = randint(0, len(allowedNum) - 1)
-                # print("\n", f"tNum is {tNum}")
                 try:
                     randIn = allowedNum[tNum]
-                    # print(
-                    # "\n", f"The random index is {randIn} out of {allowedNum}")
                     tempList[randIn] += f" is in group {curSpot+1}"
-                    # print("\n", f"the new entry is {tempList[randIn]}")
                     del allowedNum[tNum]
                 except Exception as e:
-                    # print("\n", f"excepted, error is {e}")
-                    # print(allowedNum)
                     pass
-        # print("\n", "Outing")
-        # print(tempList)
         for lp in range(len(tempList)):
             listOut.insert(lp, tempList[lp])
     else:
@@ -135,7 +122,6 @@ def randomize(listIn, listOut, amount, mode):
         holdInt = len(tempList)
         for main in range(amount):
             for lp in range(ceil(holdInt/amount)):
-                print("\n", ceil(holdInt/amount))
                 try:
                     wordIn = tempList.pop(randint(0, len(tempList)-1))
                 except:
@@ -152,36 +138,33 @@ loadList(listbox, list_2)
 
 root.bind('<Return>', submit)
 
-name_label = Label(root, text=" Add a student's name ",
-                   font=('calibre', 20, 'bold'),bg="light blue",fg="black")
+name_label = Label(root, text=" Add a student's name ",font=('calibre', 20, 'bold'), bg="light blue", fg="black")
 
-name_entry = Entry(root, textvariable=name_var, font=(
-    'calibre', 12, 'normal'),bg="white",highlightbackground = "light blue", highlightcolor= "light blue",fg="black")
-num_label = Label(root, text='Edit Name:', font=('calibre', 20, 'bold'),bg="light blue",fg="black")
+name_entry = Entry(root, textvariable=name_var, font=('calibre', 12, 'normal'), bg="white", highlightbackground="light blue", highlightcolor="light blue", fg="black")
 
-num_entry = Entry(root, textvariable=num_var, font=(
-    'calibre', 12, 'normal'),bg="white",highlightbackground = "light blue", highlightcolor= "light blue",fg="black")
+num_label = Label(root, text='Edit Name:', font=('calibre', 20, 'bold'), bg="light blue", fg="black")
 
-sub_btn = Button(root, text='Enter', command=lambda: submit(1),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
+num_entry = Entry(root, textvariable=num_var, font=('calibre', 12, 'normal'), bg="white", highlightbackground="light blue", highlightcolor="light blue", fg="black")
 
-sub_btn2 = Button(root, text='Remove Selected', command=delete,bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
+sub_btn = Button(root, text='Enter', command=lambda: submit(1), bg="light blue", highlightbackground="light blue", highlightcolor="light blue")
 
-sub_btn4 = Button(root, text="Group by name", command=lambda: randomize(
-    listbox, list_2, int(ginVar.get()), mode=1),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
-sub_btn5 = Button(root, text="Group by number", command=lambda: randomize(
-    listbox, list_2, int(ginVar.get()), mode=2),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
+sub_btn2 = Button(root, text='Remove Selected', command=delete, bg="light blue",highlightbackground="light blue", highlightcolor="light blue")
 
-sub_btn3 = Button(root, text="Edit", command=changeEntry,bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
+sub_btn4 = Button(root, text="Group by name", command=lambda: randomize(listbox, list_2, int(ginVar.get()), mode=1), bg="light blue", highlightbackground="light blue", highlightcolor="light blue")
 
-groups_label = Label(root, text="Enter the amount of groups",bg="light blue",fg="black")
-groups_entry = Entry(root, textvariable=ginVar, font=(
-    'calibre', 12, 'normal'),bg="white",highlightbackground = "light blue", highlightcolor= "light blue",fg="black")
-g2_label = Label(root, text='Groups:', font=('calibre', 15, 'bold'),bg="light blue",fg="black")
-n1_label = Label(root, text='Names:', font=('calibre', 15, 'bold'),bg="light blue",fg="black")
+sub_btn5 = Button(root, text="Group by number", command=lambda: randomize(listbox, list_2, int(ginVar.get()), mode=2), bg="light blue", highlightbackground="light blue", highlightcolor="light blue")
 
+sub_btn3 = Button(root, text="Edit", command=changeEntry, bg="light blue",highlightbackground="light blue", highlightcolor="light blue")
 
-exitButton = Button(root, text="Save and quit",
-                    command=lambda: quitList(listbox, list_2),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
+groups_label = Label(root, text="Enter the amount of groups",bg="light blue", fg="black")
+
+groups_entry = Entry(root, textvariable=ginVar, font=('calibre', 12, 'normal'), bg="white", highlightbackground="light blue", highlightcolor="light blue", fg="black")
+
+g2_label = Label(root, text='Groups:', font=('calibre', 15, 'bold'), bg="light blue", fg="black")
+
+n1_label = Label(root, text='Names:', font=('calibre', 15, 'bold'), bg="light blue", fg="black")
+
+exitButton = Button(root, text="Save and quit",command=lambda: quitList(listbox, list_2), bg="light blue", highlightbackground="light blue", highlightcolor="light blue")
 
 name_label.grid(row=0, column=1)
 name_entry.grid(row=1, column=1)
