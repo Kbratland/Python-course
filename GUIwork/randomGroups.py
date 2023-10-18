@@ -195,6 +195,6 @@ n1_label.grid(row=9, column=1)
 listbox.grid(row=10, column=1)
 g2_label.grid(row=11, column=1)
 list_2.grid(row=12, column=1)
-exitButton.grid(row=13, column=1, padx=5, pady=5)
+exitButton.grid(row=13, column=1,pady=5)
 
 root.mainloop()
