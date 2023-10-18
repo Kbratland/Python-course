@@ -112,7 +112,7 @@ def randomize(listIn, listOut, amount, mode):
                     randIn = allowedNum[tNum]
                     tempList[randIn] += f" is in group {curSpot+1}"
                     del allowedNum[tNum]
-                except Exception as e:
+                except:
                     pass
         for lp in range(len(tempList)):
             listOut.insert(lp, tempList[lp])
