@@ -5,14 +5,15 @@ from math import *
 
 root = Tk()
 root.title("The Student Organizer 2.0")
+root.configure(bg="light blue")
 num = 0
 
 name_var = StringVar()
 num_var = IntVar()
 ginVar = StringVar()
 
-listbox = Listbox(root, height=num, width=30)
-list_2 = Listbox(root, height=num, width=30)
+listbox = Listbox(root, height=num, width=30,bg="light blue",fg="black")
+list_2 = Listbox(root, height=num, width=30,bg="light blue",fg="black")
 
 
 def submit(event):
@@ -59,10 +60,10 @@ def quitList(listBin, list2):
     listFile = open("listFile")
     tempList = []
     temp2 = []
-    for lp in range(num + 1):
+    for lp in range(listBin.size() + 1):
         tempList.append(listBin.get(lp))
         temp2.append(list2.get(lp))
-    num = len(tempList)
+    num = listBin.size()
     listFile["groupHold"] = temp2
     listFile["numHold"] = num
     listFile["listHold"] = tempList
@@ -88,11 +89,9 @@ def loadList(listBin, list2):
 
 
 def randomize(listIn, listOut, amount, mode):
-
-    global num  # num is amount of people in the list
     listOut.delete(0, END)
     tempList = []
-    for lp in range(num):
+    for lp in range(listIn.size()):
         tempList.append(listIn.get(lp))
     if mode == 1:
         print("\n", "execute randomize by name")
@@ -154,35 +153,35 @@ loadList(listbox, list_2)
 root.bind('<Return>', submit)
 
 name_label = Label(root, text=" Add a student's name ",
-                   font=('calibre', 20, 'bold'))
+                   font=('calibre', 20, 'bold'),bg="light blue",fg="black")
 
 name_entry = Entry(root, textvariable=name_var, font=(
-    'calibre', 12, 'normal'))
-num_label = Label(root, text='Edit Name:', font=('calibre', 20, 'bold'))
+    'calibre', 12, 'normal'),bg="white",highlightbackground = "light blue", highlightcolor= "light blue",fg="black")
+num_label = Label(root, text='Edit Name:', font=('calibre', 20, 'bold'),bg="light blue",fg="black")
 
 num_entry = Entry(root, textvariable=num_var, font=(
-    'calibre', 12, 'normal'))
+    'calibre', 12, 'normal'),bg="white",highlightbackground = "light blue", highlightcolor= "light blue",fg="black")
 
-sub_btn = Button(root, text='Enter', command=lambda: submit(1))
+sub_btn = Button(root, text='Enter', command=lambda: submit(1),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
 
-sub_btn2 = Button(root, text='Remove Selected', command=delete)
+sub_btn2 = Button(root, text='Remove Selected', command=delete,bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
 
 sub_btn4 = Button(root, text="Group by name", command=lambda: randomize(
-    listbox, list_2, int(ginVar.get()), mode=1))
+    listbox, list_2, int(ginVar.get()), mode=1),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
 sub_btn5 = Button(root, text="Group by number", command=lambda: randomize(
-    listbox, list_2, int(ginVar.get()), mode=2))
+    listbox, list_2, int(ginVar.get()), mode=2),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
 
-sub_btn3 = Button(root, text="Edit", command=changeEntry)
+sub_btn3 = Button(root, text="Edit", command=changeEntry,bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
 
-groups_label = Label(root, text="Enter the amount of groups")
+groups_label = Label(root, text="Enter the amount of groups",bg="light blue",fg="black")
 groups_entry = Entry(root, textvariable=ginVar, font=(
-    'calibre', 12, 'normal'))
-g2_label = Label(root, text='Groups:', font=('calibre', 15, 'bold'))
-n1_label = Label(root, text='Names:', font=('calibre', 15, 'bold'))
+    'calibre', 12, 'normal'),bg="white",highlightbackground = "light blue", highlightcolor= "light blue",fg="black")
+g2_label = Label(root, text='Groups:', font=('calibre', 15, 'bold'),bg="light blue",fg="black")
+n1_label = Label(root, text='Names:', font=('calibre', 15, 'bold'),bg="light blue",fg="black")
 
 
 exitButton = Button(root, text="Save and quit",
-                    command=lambda: quitList(listbox, list_2))
+                    command=lambda: quitList(listbox, list_2),bg="light blue",highlightbackground = "light blue", highlightcolor= "light blue")
 
 name_label.grid(row=0, column=1)
 name_entry.grid(row=1, column=1)
