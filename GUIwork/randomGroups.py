@@ -54,7 +54,7 @@ def delete():
 
 def quitList(listBin, list2):
 
-    print("\n", "execute quit\n")
+    print("\nexecute quit\n\nbye\n")
 
     global num
     listFile = open("listFile")
