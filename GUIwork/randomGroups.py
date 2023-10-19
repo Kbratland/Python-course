@@ -4,7 +4,7 @@ from shelve import *
 from math import *
 
 root = Tk()
-root.title("The Student Organizer 2.0")
+root.title("(<- red button doesn't save) The Student Organizer 2.0")
 root.configure(bg="light blue")
 num = 0
 
@@ -54,7 +54,7 @@ def delete():
 
 def quitList(listBin, list2):
 
-    print("\n", "execute quit")
+    print("\n", "execute quit\n")
 
     global num
     listFile = open("listFile")
