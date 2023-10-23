@@ -1,6 +1,37 @@
-import random
-import time
+from random import *
+from time import *
+from pyperclip import *
 
+def titleCase():
+    stringList = []
+    stringList += paste().split()
+    for lp in range(0,len(stringList),1):
+        if(lp == 0):
+            temp = stringList[lp]
+            if not temp.istitle():
+                num = ord(temp[0])
+                num -= 32
+                print(num)
+                temp = chr(num) + temp[1:]
+            stringList[lp] = temp
+        else:
+            if(lp == len(stringList)-1):
+                temp = stringList[lp]
+                if not temp.istitle():
+                    num = ord(temp[0])
+                    num -= 32
+                    print(num)
+                    temp = chr(num) + temp[1:]
+                stringList[lp] = temp
+            else:
+                if len(stringList[lp]) > 3:
+                    temp = stringList[lp]
+                    if not temp.istitle():
+                        num = ord(temp[0])
+                        num -= 32
+                        print(num)
+                        temp = chr(num) + temp[1:]
+                    stringList[lp] = temp
 
 def getInt(promptIn, minInt=None, maxInt=None):
     while True:
@@ -8,16 +39,16 @@ def getInt(promptIn, minInt=None, maxInt=None):
         try:
             intIn = int(intIn)
             if minInt != None and intIn < minInt:
-                time.sleep(0.15)
+                sleep(0.15)
                 print(f"\n Your number is to small, the minimum is {minInt}")
                 continue
             if maxInt != None and intIn > maxInt:
-                time.sleep(0.15)
+                sleep(0.15)
                 print(f"\nYour number is to big, the maximum is {maxInt}")
                 continue
             return f"\nYour number is accepted"
         except:
-            time.sleep(0.15)
+            sleep(0.15)
             print("\nThat is not a integer, try again")
             continue
 
@@ -28,23 +59,23 @@ def getFloat(promptIn, minFloat=None, maxFloat=None):
         try:
             floatIn = float(floatIn)
             if minFloat != None and floatIn < minFloat:
-                time.sleep(0.15)
+                sleep(0.15)
                 print(f"\n Your number is to small, the minimum is {minFloat}")
                 continue
             if maxFloat != None and floatIn > maxFloat:
-                time.sleep(0.15)
+                sleep(0.15)
                 print(f"\nYour number is to big, the maximum is {maxFloat}")
                 continue
             return f"\nYour number is accepted"
         except:
-            time.sleep(0.15)
+            sleep(0.15)
             print("\nThat is not a float, try again")
             continue
 
 
 def checkPrime(promptIn, printTests=False):
     while True:
-        time.sleep(0.15)
+        sleep(0.15)
         numIn = input("\n" + str(promptIn))
         try:
             numIn = int(numIn)
@@ -65,7 +96,7 @@ def checkPrime(promptIn, printTests=False):
 
 def listGen(listIn, amount,low = 0,high = 100):
     for lp in range(amount):
-        listIn.append(random.randint(low, high))
+        listIn.append(randint(low, high))
         lp += 1
 
 
@@ -132,9 +163,9 @@ def quickSort(listIn, lowIndex, highIndex, pivotIndex):
         print(listIn)
         # return listIn
 
-numList = []
-listGen(numList,20)
-print(numList)
-quickSort(numList, 0, len(numList)-1, 0)
-print("qSort: ",numList)
-print(".sort():",numList.sort())
+# numList = []
+# listGen(numList,20)
+# print(numList)
+# quickSort(numList, 0, len(numList)-1, 0)
+# print("qSort: ",numList)
+# print(".sort():",numList.sort())
