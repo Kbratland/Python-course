@@ -10,7 +10,7 @@ def titleCase():
             if not temp.istitle():
                 num = ord(temp[0])
                 num -= 32
-                print(num)
+                # print(num)
                 temp = chr(num) + temp[1:]
             stringList[lp] = temp
         else:
@@ -19,7 +19,7 @@ def titleCase():
                 if not temp.istitle():
                     num = ord(temp[0])
                     num -= 32
-                    print(num)
+                    # print(num)
                     temp = chr(num) + temp[1:]
                 stringList[lp] = temp
             else:
@@ -28,10 +28,11 @@ def titleCase():
                     if not temp.istitle():
                         num = ord(temp[0])
                         num -= 32
-                        print(num)
+                        # print(num)
                         temp = chr(num) + temp[1:]
                     stringList[lp] = temp
         returnString += stringList[lp] + " "
+        copy(returnString)
     return returnString
 
 print(titleCase())
