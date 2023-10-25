@@ -1,12 +1,14 @@
 from random import *
 from time import *
 from pyperclip import *
+from re import *
+
 
 def titleCase():
     stringList = []
     stringList += paste().split()
-    for lp in range(0,len(stringList),1):
-        if(lp == 0):
+    for lp in range(0, len(stringList), 1):
+        if (lp == 0):
             temp = stringList[lp]
             if not temp.istitle():
                 num = ord(temp[0])
@@ -15,7 +17,7 @@ def titleCase():
                 temp = chr(num) + temp[1:]
             stringList[lp] = temp
         else:
-            if(lp == len(stringList)-1):
+            if (lp == len(stringList)-1):
                 temp = stringList[lp]
                 if not temp.istitle():
                     num = ord(temp[0])
@@ -32,6 +34,7 @@ def titleCase():
                         print(num)
                         temp = chr(num) + temp[1:]
                     stringList[lp] = temp
+
 
 def getInt(promptIn, minInt=None, maxInt=None):
     while True:
@@ -86,15 +89,15 @@ def checkPrime(promptIn, printTests=False):
                     print(
                         f"Testing {numSub} % {numDiv}, result is {numSub % numDiv}")
                 if numSub % numDiv == 0:
-                    return f"\nThe number {numIn} is not prime\n"
+                    return False
                 lp += 1
-            return f"\nThe number {numIn} is prime\n"
+            return True
         except:
             print("\nThats not an integer, try again\n")
             continue
 
 
-def listGen(listIn, amount,low = 0,high = 100):
+def listGen(listIn, amount, low=0, high=100):
     for lp in range(amount):
         listIn.append(randint(low, high))
         lp += 1
@@ -118,7 +121,7 @@ def minNum(listIn):
 
 
 def sortList(listIn):
-    #833 number sorted per second
+    # 833 number sorted per second
     tempList = []
     tempLen = len(listIn)
     lp = 0
@@ -128,6 +131,7 @@ def sortList(listIn):
         tempList.append(tempNum)
         lp += 1
     return tempList
+
 
 def quickSort(listIn, lowIndex, highIndex, pivotIndex):
     pivot = pivotIndex
@@ -163,9 +167,37 @@ def quickSort(listIn, lowIndex, highIndex, pivotIndex):
         print(listIn)
         # return listIn
 
-# numList = []
-# listGen(numList,20)
-# print(numList)
-# quickSort(numList, 0, len(numList)-1, 0)
-# print("qSort: ",numList)
-# print(".sort():",numList.sort())
+
+def phoneEmailSearch():
+    phoneRegex = compile(r'''(
+        (\d{3}|\(\d{3}\))?                # area code
+        (\s|-|\.)?                        # separator
+        (\d{3})                           # first 3 digits
+        (\s|-|\.)                         # separator
+        (\d{4})                           # last 4 digits
+        (\s*(ext|x|ext.)\s*(\d{2,5}))?    # extension
+        )''', VERBOSE)
+
+    emailRegex = compile(r'''(
+    [a-zA-Z0-9._%+-]+      # username
+    @                      # @ symbol
+    [a-zA-Z0-9.-]+         # domain name
+    (\.[a-zA-Z]{2,4})       # dot-something
+    )''', VERBOSE)
+
+    text = str(paste())
+
+    matches = []
+    for groups in phoneRegex.findall(text):
+        phoneNum = '-'.join([groups[1], groups[3], groups[5]])
+        if groups[8] != '':
+            phoneNum += ' x' + groups[8]
+        matches.append(phoneNum)
+    for groups in emailRegex.findall(text):
+        matches.append(groups[0])
+
+    if len(matches) > 0:
+        # copy('\n'.join(matches))
+        return '\n'.join(matches)
+    else:
+        return('No phone numbers or email addresses found.')
