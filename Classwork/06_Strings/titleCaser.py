@@ -1,5 +1,5 @@
 from pyperclip import *
-#https://nostarch.com/contactus/
+
 def titleCase():
     returnString = ""
     stringList = []
