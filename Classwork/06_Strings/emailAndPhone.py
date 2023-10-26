@@ -1,6 +1,6 @@
 
 # emailAndPhone.py - Finds phone numbers and email addresses on the clipboard.
-
+#https://nostarch.com/contactus/
 from pyperclip import *
 from re import *
 
