@@ -10,9 +10,7 @@ def titleCase():
     for lp in range(len(stringList)):
         stringList[lp] = stringList[lp].lower()
     for lp in range(0, len(stringList)):
-        if (lp == 0):
-            stringList[lp] = stringList[lp].capitalize()
-        elif (lp == len(stringList)-1):
+        if (lp == 0 or lp == len(stringList)-1):
             stringList[lp] = stringList[lp].capitalize()
         else:
             if not stringList[lp] in noCap:
