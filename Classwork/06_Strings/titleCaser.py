@@ -1,40 +1,23 @@
 from pyperclip import *
-#https://nostarch.com/contactus/
+
 def titleCase():
     returnString = ""
     noCap = ['a', 'and', 'as', 'at', 'but', 'by', 'down', 'for', 'from', 'if', 'in', 'into', 'like', 'near', 'nor', 'of', 'off', 'on', 'once', 'onto', 'or', 'over', 'past', 'so', 'than', 'that', 'to', 'upon', 'when', 'with', 'Yet']
     stringList = []
     stringList += paste().split()
-    for lp in range(0,len(stringList),1):
+    for lp in range(len(stringList)):
+        stringList[lp] = stringList[lp].lower()
+    print(stringList)
+    for lp in range(0,len(stringList)):
         if(lp == 0):
-            temp = stringList[lp]
-            if not temp.istitle():
-                num = ord(temp[0])
-                num -= 32
-                temp = chr(num) + temp[1:]
-            stringList[lp] = temp
+            stringList[lp] = stringList[lp].capitalize()
+        elif(lp == len(stringList)-1):
+           stringList[lp] = stringList[lp].capitalize()
         else:
-            if(lp == len(stringList)-1):
-                temp = stringList[lp]
-                if not temp.istitle():
-                    num = ord(temp[0])
-                    num -= 32
-                    temp = chr(num) + temp[1:]
-                stringList[lp] = temp
-            else:
-                temp = stringList[lp]
-                temp.lower()
-                if not temp in noCap:
-                    num = ord(temp[0])
-                    num -= 32
-                    temp = chr(num) + temp[1:]
-                else:
-                    num = ord(temp[0])
-                    num += 32
-                    temp = chr(num) + temp[1:]
-                stringList[lp] = temp
+            if not stringList[lp] in noCap:
+                stringList[lp] = stringList[lp].capitalize()
         returnString += stringList[lp] + " "
-        copy(returnString)
+    copy(returnString)
     return returnString
 
 print(titleCase())
