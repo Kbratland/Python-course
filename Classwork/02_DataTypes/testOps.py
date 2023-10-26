@@ -1,9 +1,11 @@
-def printPicnic(itemsDict, leftWidth, rightWidth):
-    print('PICNIC ITEMS'.center(leftWidth + rightWidth, ' '))
-    for k, v in itemsDict.items():
-        print(k.ljust(leftWidth, ' ') + str(v).rjust(rightWidth))
+import pyperclip
 
-picnicItems = {'sandwiches': 4, 'apples': 12, 'cups': 4, 'cookies': 8000}
-printPicnic(picnicItems, 12, 5)
-printPicnic(picnicItems, 20, 6)
-print(ord("1"))
+templist = []
+templist += str(pyperclip.paste()).split()
+for lp in range(len(templist)-1):
+    temp = templist[lp]
+    num = ord(temp[0])
+    num += 32
+    temp = chr(num) + temp[1:]
+    templist[lp] = temp
+print(templist)
