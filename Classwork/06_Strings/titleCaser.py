@@ -23,11 +23,11 @@ def titleCase():
                 stringList[lp] = temp
             else:
                 temp = stringList[lp]
-                if not stringList[lp].lower() in noCap:
-                    if not temp.istitle():
-                        num = ord(temp[0])
-                        num -= 32
-                        temp = chr(num) + temp[1:]
+                temp.lower()
+                if not temp in noCap:
+                    num = ord(temp[0])
+                    num -= 32
+                    temp = chr(num) + temp[1:]
                 else:
                     num = ord(temp[0])
                     num += 32
