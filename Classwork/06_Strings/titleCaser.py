@@ -7,7 +7,6 @@ def titleCase():
     stringList += paste().split()
     for lp in range(len(stringList)):
         stringList[lp] = stringList[lp].lower()
-    print(stringList)
     for lp in range(0,len(stringList)):
         if(lp == 0):
             stringList[lp] = stringList[lp].capitalize()
