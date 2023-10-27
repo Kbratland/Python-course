@@ -1,6 +1,5 @@
 from pyperclip import *
 
-
 def titleCase():
     returnString = ""
     noCap = ['a', 'and', 'as', 'at', 'but', 'by', 'down', 'for', 'from', 'if', 'in', 'into', 'like', 'near', 'nor',
@@ -16,6 +15,5 @@ def titleCase():
         returnString += stringList[lp] + " "
     copy(returnString)
     return returnString
-
 
 print(titleCase())
