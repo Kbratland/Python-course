@@ -13,7 +13,7 @@ def titleCase():
             if not stringList[lp] in noCap:
                 stringList[lp] = stringList[lp].capitalize()
         returnString += stringList[lp] + " "
-    copy(returnString)
     return returnString
 
 print(titleCase())
+copy(titleCase())

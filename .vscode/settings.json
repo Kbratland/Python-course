@@ -17,6 +17,7 @@
     "selectmode",
     "taskcount",
     "templabel",
+    "templist",
     "textvariable",
     "Tkinter",
     "weightlabel"
