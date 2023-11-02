@@ -3,8 +3,8 @@ from pyperclip import *
 from random import *
 
 searchString = ""
-random = True
-sType = 2
+random = False
+sType = 3
 if random:
     numRange = randint(0,25)
     for lp in range(numRange):
@@ -20,3 +20,9 @@ else:
     elif sType == 2:
         searchString = paste()
         open("https://www.google.com/maps/search/" + searchString)
+    elif sType == 3:
+        searchString = paste()
+        #Common code resources
+        open("https://stackoverflow.com/search?q="+searchString,2)
+        open("https://www.codeguru.com/?s="+searchString,2)
+        open("https://en.wikipedia.org/wiki/Special:Search?go=Go&search="+searchString,2)
