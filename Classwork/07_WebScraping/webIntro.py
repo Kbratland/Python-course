@@ -25,4 +25,6 @@ else:
         #Common code resources
         open("https://stackoverflow.com/search?q="+searchString,2)
         open("https://www.codeguru.com/?s="+searchString,2)
-        open("https://en.wikipedia.org/wiki/Special:Search?go=Go&search="+searchString,2)
+        open("https://google.com/search?q="+searchString,2)
+    elif sType == 4:
+        pass
