@@ -9,8 +9,8 @@ try:
 except Exception as e:
     print(f"Error retrieving webpage: {e}")
     exit()
-    
-newSoup = BeautifulSoup(result.text,'html.parser')
+
+newSoup = BeautifulSoup(result.text, 'html.parser')
 highFind = newSoup.select(".hi-lo .hi")
 lowFind = newSoup.select(".hi-lo .lo")
 currentFind = newSoup.select(".current-temp")
@@ -22,4 +22,4 @@ print("The low for today is " + lowFind[0].getText())
 print("The current temperature is " + currentFind[0].getText())
 print("Feels" + feelsFind[0].getText())
 print(weathFind[0].getText())
-print("The weather today is "+weath2Find[1].getText())
+print("The weather today is " + weath2Find[1].getText())
