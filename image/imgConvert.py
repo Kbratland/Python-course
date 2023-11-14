@@ -63,4 +63,4 @@ def save_as_text(ascii_art):
 if __name__ == '__main__':
     main()
     
-print("\n----------Done----------\n")
+print("\n--------------- Done ---------------\n")
