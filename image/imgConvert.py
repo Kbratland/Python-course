@@ -5,7 +5,6 @@ ascii_characters_by_surface = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmw
 
 def main():
     image = Image.open('image.jpg')
-    # you can first resize the image if needed
     image = image.resize((250,125))
     ascii_art = convert_to_ascii_art(image)
     save_as_text(ascii_art)
