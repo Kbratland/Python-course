@@ -64,25 +64,23 @@ def loadList(listBin):
 
 loadList(listbox)
 
-root.bind('<Return>', submit)
 
-name_label = Label(root, text=' Add to Todo List',
-                   font=('calibre', 20, 'bold'))
 
-name_entry = Entry(root, textvariable=name_var, font=(
-    'calibre', 12, 'normal'), bg="black")
+name_label = Label(root, text=' Add to Todo List',font=('calibre', 20, 'bold'))
+
+name_entry = Entry(root, textvariable=name_var, font=('calibre', 12, 'normal'), bg="black")
+
 num_label = Label(root, text='Edit Index:', font=('calibre', 20, 'bold'))
 
-num_entry = Entry(root, textvariable=num_var, font=(
-    'calibre', 12, 'normal'), bg="black")
+num_entry = Entry(root, textvariable=num_var, font=('calibre', 12, 'normal'), bg="black")
+
+root.bind('<Return>', submit)
 
 sub_btn = Button(root, text='Enter', command=lambda: submit(1))
 
-sub_btn2 = Button(root, text='Remove Selected', command=delete)
-
 sub_btn3 = Button(root, text="Edit", command=changeEntry)
 
-
+sub_btn2 = Button(root, text='Remove Selected', command=delete)
 
 exitButton = Button(root,text = "Save and quit",command=lambda: quitList(listbox))
 

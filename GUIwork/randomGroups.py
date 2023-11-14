@@ -1,11 +1,12 @@
 from random import *
-from tkinter import *
 from shelve import *
 from math import *
+from tkinter import *
 
 root = Tk()
 root.title("(<- red button doesn't save) The Student Organizer 2.0")
 root.configure(bg="light blue")
+
 num = 0
 
 name_var = StringVar()
