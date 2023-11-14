@@ -53,7 +53,8 @@ def convert_pixel_to_character(pixel):
 def save_as_text(ascii_art):
     with open("image.txt", "w") as file:
         for line in ascii_art:
-            print(line)
+            if ds:
+                print(line)
             file.write(line)
             file.write('\n')
         file.close()
