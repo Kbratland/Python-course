@@ -20,7 +20,8 @@
     "templist",
     "textvariable",
     "Tkinter",
-    "weightlabel"
+    "weightlabel",
+    "Xgoing"
   ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,

@@ -5,8 +5,8 @@ text = "new text"
 
 
 def changeText():
-    global my_text
-    label.config(text=my_text)
+    global text
+    label.config(text=text)
 
 
 button = Button(root, text="change text", command=changeText)
