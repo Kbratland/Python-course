@@ -3,16 +3,15 @@ from pyperclip import *
 from random import *
 
 searchString = ""
-random = False
+random = True
 sType = 3
 if random:
     numRange = randint(0,25)
     for lp in range(numRange):
         searchString = ""
-        searchString +=  chr(randint(ord('a'), ord('z')))
-        searchString +=  chr(randint(ord('a'), ord('z')))
-        searchString +=  chr(randint(ord('a'), ord('z')))
-        open("https://google.com/search?q="+searchString)
+        for lp in range(0,15):
+            searchString +=  chr(randint(ord('a'), ord('z')))
+        open("https://ship.shapewright.com/?name="+searchString)
 else:
     if sType == 1:
         searchString = "weather in "+ paste()
