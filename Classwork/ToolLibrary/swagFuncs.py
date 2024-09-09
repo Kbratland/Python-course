@@ -164,7 +164,7 @@ def quickSort(listIn, lowIndex, highIndex, pivotIndex):
     if pivot < highIndex:
         quickSort(listIn, pivot+1, highIndex, pivot+1)
     else:
-        print(listIn)
+        print(listIn,"\n")
         # return listIn
 
 
