@@ -14,7 +14,7 @@ while loopCode == True:
     diSpace = " "
     diSource = "0"
     getInput = True
-    time.sleep(0.0015)
+    time.sleep(0.0005)
 
     while (getInput == True):
 
@@ -35,12 +35,12 @@ while loopCode == True:
                 startInt = 1
         except:
 
-            time.sleep(0.0015)
+            time.sleep(0.0005)
 
             print("\nThats not a positive even integer, lets try again \n" + end)
             continue
 
-        time.sleep(0.0015)
+        time.sleep(0.0005)
         print("\nEnter a character to make the diamond out of (Single characters preferred but not necessary)\n" + end)
 
         try:
@@ -56,7 +56,7 @@ while loopCode == True:
 
                 diSource = diIn
         except:
-            time.sleep(0.0015)
+            time.sleep(0.0005)
             print("\nThat doesn't work, lets try this again from the beginning\n" + end)
             continue
         if not randomBool:
@@ -71,7 +71,7 @@ while loopCode == True:
         else:
             break
 
-    time.sleep(0.0015)
+    time.sleep(0.0005)
     print("\nPrinting\n" + end)
 
     level = 1
@@ -84,7 +84,7 @@ while loopCode == True:
             level += 1
             for lp2 in range(int(diamondWidth - level)):
 
-                time.sleep(0.0015)
+                time.sleep(0.0005)
                 if randomBool == True:
 
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
@@ -94,7 +94,7 @@ while loopCode == True:
 
             for lp3 in range(int(lp)):
 
-                time.sleep(0.0015)
+                time.sleep(0.0005)
                 if randomBool == True:
                     randomUpperLetter = chr(random.randint(ord('A'), ord('Z')))
                     print(randomUpperLetter + start, end="")
@@ -103,7 +103,7 @@ while loopCode == True:
 
             for lp4 in range(int(diamondWidth - level)):
 
-                time.sleep(0.0015)
+                time.sleep(0.0005)
 
                 if randomBool == True:
 
@@ -111,7 +111,7 @@ while loopCode == True:
                     print(randomLowerLetter + end, end="")
                 else:
                     print(diSpace + end, end="")
-            time.sleep(0.0015)
+            time.sleep(0.0005)
 
             print("")
 
@@ -124,7 +124,7 @@ while loopCode == True:
             level -= 1
             for lp2 in range(int(diamondWidth - level)):
 
-                time.sleep(0.0015)
+                time.sleep(0.0005)
                 if randomBool == True:
 
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
@@ -135,7 +135,7 @@ while loopCode == True:
 
             for lp3 in range(int(lp)):
 
-                time.sleep(0.0015)
+                time.sleep(0.0005)
 
                 if randomBool == True:
 
@@ -147,18 +147,18 @@ while loopCode == True:
 
             for lp4 in range(int(diamondWidth - level)):
 
-                time.sleep(0.0015)
+                time.sleep(0.0005)
                 if randomBool == True:
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
                     print(randomLowerLetter + end, end="")
                 else:
                     print(diSpace + end, end="")
 
-            time.sleep(0.0015)
+            time.sleep(0.0005)
 
             print("")
 
-    time.sleep(0.0015)
+    time.sleep(0.0005)
     print("\n All Done!, Type exit to exit or loop to run again\n" + end)
     randomBool = False
     responding = True
