@@ -22,8 +22,9 @@ Playing = True
 def takeTurn(buttonIn, cordA, cordB, isPlay):
     global gameGrid
     global Xgoing
-    if isPlay:
-        if Xgoing and buttonIn["text"] == "[ ]":
+    if isPlay and buttonIn["text"] == "[ ]":
+        #and buttonIn["text"] == "[ ]"
+        if Xgoing:
             buttonIn.config(text="[X]")
             turnLabel.config(text="O's Turn")
             Xgoing = False
@@ -31,6 +32,7 @@ def takeTurn(buttonIn, cordA, cordB, isPlay):
             for lp in range(3):
                 print(gameGrid[lp])
             print("")
+            # buttonIn["text"] == "[ ]"
         elif buttonIn["text"] == "[ ]":
             buttonIn.config(text="[O]")
             turnLabel.config(text="X's Turn")
