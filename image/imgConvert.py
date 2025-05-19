@@ -24,7 +24,7 @@ def main():
     if ds:
         image = image.resize((60, 33))
     else:
-        image = image.resize((1920, 1080))
+        image = image.resize((960, 540))
     ascii_art = convert_to_ascii_art(image)
     save_as_text(ascii_art)
 
