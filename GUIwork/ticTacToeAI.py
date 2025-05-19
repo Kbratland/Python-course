@@ -4,7 +4,7 @@ from tkinter import *
 root = Tk()
 root.title("Tic Tac Toe!")
 root.configure(bg="light blue")
-baseWidth = 200
+baseWidth = 180
 baseHeight = 250
 screenWidth = root.winfo_screenwidth()
 screenHeight = root.winfo_screenheight()
@@ -44,6 +44,8 @@ def aiTurn():
     global btnList
     if not Xgoing and Playing:
         while True:
+            if not Playing:
+                break
             aiCordA = random.randint(0, 2)
             aiCordB = random.randint(0, 2)
             if(gameGrid[aiCordA][aiCordB] != " "):
@@ -55,8 +57,10 @@ def aiTurn():
                 break
         turnLabel.config(text="X's Turn")  
         winCheck(gameGrid)
+        print("\n---AI Turn---\n")
         for lp in range(3):
             print(gameGrid[lp])
+        print("")
 
 def winCheck(gIn):
     global Playing
