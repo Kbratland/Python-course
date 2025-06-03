@@ -30,7 +30,6 @@ def takeTurn(buttonIn, cordA, cordB, isPlay):
         if Xgoing:
             turnCounter += 1
             buttonIn.config(text="[X]", background="light green")
-            # turnLabel.config(text="AI's Turn")
             Xgoing = False
             gameGrid[cordA][cordB] = "X"
             time.sleep(0.1)
