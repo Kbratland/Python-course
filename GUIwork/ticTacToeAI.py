@@ -5,7 +5,7 @@ from tkinter import *
 root = Tk()
 root.title("Tic Tac Toe!")
 root.configure(bg="light blue")
-baseWidth = 180
+baseWidth = 150
 baseHeight = 225
 turnCounter = 0
 screenWidth = root.winfo_screenwidth()
@@ -112,7 +112,7 @@ def aiTurn():
                 Xgoing = True
                 turnCounter += 1
                 break
-        turnLabel.config(text="Click space")  
+        turnLabel.config(text=" Click ")  
         winCheck(gameGrid)
 
 def winCheck(gIn):
@@ -125,32 +125,32 @@ def winCheck(gIn):
     if gIn[0][0] == "O" and gIn[0][1] == "O" and gIn[0][2] == "O" or\
             gIn[1][0] == "O" and gIn[1][1] == "O" and gIn[1][2] == "O" or\
             gIn[2][0] == "O" and gIn[2][1] == "O" and gIn[2][2] == "O":
-        turnLabel.config(text="O wins!")
+        turnLabel.config(text="O wins")
         Playing = False
     if gIn[0][0] == "X" and gIn[0][1] == "X" and gIn[0][2] == "X" or\
             gIn[1][0] == "X" and gIn[1][1] == "X" and gIn[1][2] == "X" or\
             gIn[2][0] == "X" and gIn[2][1] == "X" and gIn[2][2] == "X":
-        turnLabel.config(text="X wins!")
+        turnLabel.config(text="X wins")
         Playing = False
     # Vertical
     if gIn[0][0] == "O" and gIn[1][0] == "O" and gIn[2][0] == "O" or\
             gIn[0][1] == "O" and gIn[1][1] == "O" and gIn[2][1] == "O" or\
             gIn[0][2] == "O" and gIn[1][2] == "O" and gIn[2][2] == "O":
-        turnLabel.config(text="O wins!")
+        turnLabel.config(text="O wins")
         Playing = False
     if gIn[0][0] == "X" and gIn[1][0] == "X" and gIn[2][0] == "X" or\
             gIn[0][1] == "X" and gIn[1][1] == "X" and gIn[2][1] == "X" or\
             gIn[0][2] == "X" and gIn[1][2] == "X" and gIn[2][2] == "X":
-        turnLabel.config(text="X wins!")
+        turnLabel.config(text="X wins")
         Playing = False
     # Angles
     if gIn[0][0] == "O" and gIn[1][1] == "O" and gIn[2][2] == "O" or\
             gIn[0][2] == "O" and gIn[1][1] == "O" and gIn[2][0] == "O":
-        turnLabel.config(text="O wins!")
+        turnLabel.config(text="O wins")
         Playing = False
     if gIn[0][0] == "X" and gIn[1][1] == "X" and gIn[2][2] == "X" or\
             gIn[0][2] == "X" and gIn[1][1] == "X" and gIn[2][0] == "X":
-        turnLabel.config(text="X wins!")
+        turnLabel.config(text="X wins")
         Playing = False
 
 
@@ -165,11 +165,11 @@ def Restart(listIn):
     for l in range(3):
         for n in range(3):
             gameGrid[l][n] = " "
-    turnLabel.config(text="Click space")
+    turnLabel.config(text=" Click ")
     Xgoing = True
     Playing = True
 
-turnLabel = Label(root, text="Click space", font=(
+turnLabel = Label(root, text=" Click ", font=(
     'calibre', 15, 'bold'), bg="light blue", fg="black")
 
 btnA1 = Button(root, text="[ ]",
