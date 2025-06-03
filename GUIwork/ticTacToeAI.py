@@ -29,11 +29,11 @@ def takeTurn(buttonIn, cordA, cordB, isPlay):
     if isPlay and buttonIn["text"] == "[ ]":
         if Xgoing:
             turnCounter += 1
-            buttonIn.config(text="[X]")
-            turnLabel.config(text="AI's Turn")
+            buttonIn.config(text="[X]", background="light green")
+            # turnLabel.config(text="AI's Turn")
             Xgoing = False
             gameGrid[cordA][cordB] = "X"
-            time.sleep(0.5)
+            time.sleep(0.1)
             aiTurn()
         elif buttonIn["text"] == "[ ]":
             pass
@@ -108,11 +108,11 @@ def aiTurn():
                 continue
             else:
                 gameGrid[aiCordA][aiCordB] = "O"
-                btnList[aiCordA*3 + aiCordB].config(text="[O]")
+                btnList[aiCordA*3 + aiCordB].config(text="[O]",background="light gray")
                 Xgoing = True
                 turnCounter += 1
                 break
-        turnLabel.config(text="X's Turn")  
+        turnLabel.config(text="Click space")  
         winCheck(gameGrid)
 
 def winCheck(gIn):
@@ -161,15 +161,15 @@ def Restart(listIn):
     global turnCounter
     turnCounter = 0
     for lp in range(len(btnList)):
-        btnList[lp].config(text="[ ]")
+        btnList[lp].config(text="[ ]",background="light blue")
     for l in range(3):
         for n in range(3):
             gameGrid[l][n] = " "
-    turnLabel.config(text="X's Turn")
+    turnLabel.config(text="Click space")
     Xgoing = True
     Playing = True
 
-turnLabel = Label(root, text="X's Turn", font=(
+turnLabel = Label(root, text="Click space", font=(
     'calibre', 15, 'bold'), bg="light blue", fg="black")
 
 btnA1 = Button(root, text="[ ]",
@@ -195,16 +195,16 @@ btnList = [btnA1, btnA2, btnA3, btnB1, btnB2, btnB3, btnC1, btnC2, btnC3]
 
 btnPlay = Button(root, text="Reset", command=lambda: Restart(btnList), bg="light blue", highlightbackground="light blue", highlightcolor="light blue")
 
-turnLabel.grid(column=1, row=0, sticky="nsew")
-btnA1.grid(column=0, row=1, sticky="nsew", padx=5, pady=5)
-btnA2.grid(column=1, row=1,)
-btnA3.grid(column=2, row=1, sticky="nsew", padx=5, pady=5)
-btnB1.grid(column=0, row=2, sticky="nsew", padx=5, pady=5)
-btnB2.grid(column=1, row=2,)
-btnB3.grid(column=2, row=2, sticky="nsew", padx=5, pady=5)
-btnC1.grid(column=0, row=3, sticky="nsew", padx=5, pady=5)
-btnC2.grid(column=1, row=3,)
-btnC3.grid(column=2, row=3, sticky="nsew", padx=5, pady=5)
-btnPlay.grid(column=1, row=4, sticky="nsew")
+turnLabel.grid(column=1, row=0)
+btnA1.grid(column=0, row=1, padx=5, pady=5)
+btnA2.grid(column=1, row=1, padx=5, pady=5)
+btnA3.grid(column=2, row=1, padx=5, pady=5)
+btnB1.grid(column=0, row=2, padx=5, pady=5)
+btnB2.grid(column=1, row=2, padx=5, pady=5)
+btnB3.grid(column=2, row=2, padx=5, pady=5)
+btnC1.grid(column=0, row=3, padx=5, pady=5)
+btnC2.grid(column=1, row=3, padx=5, pady=5)
+btnC3.grid(column=2, row=3, padx=5, pady=5)
+btnPlay.grid(column=1, row=4)
 
 root.mainloop()
