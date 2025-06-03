@@ -10,21 +10,23 @@ while True:
     startTime = time.time()
     while True:
         stringTote = ""
+        printTote = ""
+        color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
         for n in range(326):
             if rainbow:
-                char = random.choice(string.ascii_letters)
-                color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
-                stringTote += f"\033[{color_code}m{char}\033[0m"
+                char = random.choice(string.ascii_letters).lower()
+                printTote += f"\033[{color_code}m{char}\033[0m"
+                stringTote += random.choice(string.ascii_letters).lower()
             else:
                 stringTote += random.choice(string.ascii_letters).lower()
-        time.sleep(0.000001) 
-        print(stringTote)
+        time.sleep(0.000001)
+        if not rainbow:
+            print(stringTote)
+        else:
+            print(printTote)
 
-        if word.lower() in stringTote.lower():
-            if not rainbow:
-                highlighted = stringTote.lower().replace(word.lower(), f"\033[93m{word.upper()}\033[0m")
-            else:
-                highlighted = stringTote.lower().replace(word.lower(), f"\033[37m{word.upper()}\033[0m")
+        if word.lower() in stringTote.strip().lower():
+            highlighted = stringTote.lower().replace(word.lower(), f"\033[93m{word.upper()}\033[0m") 
             print(f"\nFound the word '{word}' in the generated string: \n{highlighted}\n")
             endTime = time.time()
             elapsed = endTime - startTime
