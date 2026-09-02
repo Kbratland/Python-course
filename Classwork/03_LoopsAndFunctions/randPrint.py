@@ -13,9 +13,9 @@ while True:
     while True:
         stringTote = ""
         printTote = ""
-        color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
         for n in range(370):
             if rainbow:
+                color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
                 char = random.choice(string.ascii_letters).lower()
                 printTote += f"\033[{color_code}m{char}\033[0m"
                 stringTote += random.choice(string.ascii_letters).lower()
