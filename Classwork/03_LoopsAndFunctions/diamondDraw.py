@@ -86,9 +86,9 @@ while loopCode == True:
 
                 time.sleep(0.0005)
                 if randomBool == True:
-
+                    color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter + end, end="")
+                    print(f"\033[{00}m{randomLowerLetter}\033[0m", end="")
                 else:
                     print(diSpace + end, end="")
 
@@ -96,8 +96,9 @@ while loopCode == True:
 
                 time.sleep(0.0005)
                 if randomBool == True:
+                    color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
                     randomUpperLetter = chr(random.randint(ord('A'), ord('Z')))
-                    print(randomUpperLetter + start, end="")
+                    print(f"\033[{color_code}m{randomUpperLetter}\033[0m", end="")
                 else:
                     print(diSource + start, end="")
 
@@ -106,9 +107,9 @@ while loopCode == True:
                 time.sleep(0.0005)
 
                 if randomBool == True:
-
+                    color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter + end, end="")
+                    print(f"\033[{00}m{randomLowerLetter}\033[0m", end="")
                 else:
                     print(diSpace + end, end="")
             time.sleep(0.0005)
@@ -126,9 +127,8 @@ while loopCode == True:
 
                 time.sleep(0.0005)
                 if randomBool == True:
-
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter + end, end="")
+                    print(f"\033[{00}m{randomLowerLetter}\033[0m", end="")
                 else:
 
                     print(diSpace + end, end="")
@@ -139,8 +139,9 @@ while loopCode == True:
 
                 if randomBool == True:
 
+                    color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
                     randomUpperLetter = chr(random.randint(ord('A'), ord('Z')))
-                    print(randomUpperLetter + start, end="")
+                    print(f"\033[{color_code}m{randomUpperLetter}\033[0m", end="")
                 else:
 
                     print(diSource + start, end="")
@@ -149,8 +150,9 @@ while loopCode == True:
 
                 time.sleep(0.0005)
                 if randomBool == True:
+                    color_code = random.choice([31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96])
                     randomLowerLetter = chr(random.randint(ord('a'), ord('z')))
-                    print(randomLowerLetter + end, end="")
+                    print(f"\033[{00}m{randomLowerLetter}\033[0m", end="")
                 else:
                     print(diSpace + end, end="")
 
